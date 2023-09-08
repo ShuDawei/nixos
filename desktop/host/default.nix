@@ -70,6 +70,7 @@
             extraGroups = [ "wheel" "networkmanager" ];
         };
     };
+    programs.dconf.enable = true;
 
     system.stateVersion = "23.05";
 }
