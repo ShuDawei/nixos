@@ -9,6 +9,7 @@
         ./cfg/firefox.nix
         ./cfg/gh.nix
         ./cfg/git.nix
+        ./cfg/gtk.nix
         ./cfg/hyprland.nix
         ./cfg/neovim.nix
         ./cfg/nushell.nix
