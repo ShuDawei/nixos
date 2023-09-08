@@ -11,6 +11,7 @@
         ./cfg/git.nix
         ./cfg/hyprland.nix
         ./cfg/neovim.nix
+        ./cfg/nushell.nix
         ./cfg/waybar.nix
     ];
 
