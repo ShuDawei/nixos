@@ -27,6 +27,7 @@
             neofetch
             wl-clipboard
             zig
+            lm_sensors
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
