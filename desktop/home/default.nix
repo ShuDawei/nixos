@@ -26,6 +26,8 @@
             hyprpaper
             neofetch
             wl-clipboard
+
+            pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
         ];
     };
 
