@@ -32,6 +32,8 @@
         xwayland.enable = true;
     };
 
+    programs.steam.enable = true;
+
     services.xserver = {
         enable = true;
         layout = "de";
