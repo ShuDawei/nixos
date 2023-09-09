@@ -26,13 +26,19 @@
         keyMap = "de";
     };
 
+    programs.hyprland = {
+        enable = true;
+        enableNvidiaPatches = true;
+        xwayland.enable = true;
+    };
+
     services.xserver = {
         enable = true;
         layout = "de";
         xkbVariant = "";
         videoDrivers = [ "nvidia" ];
+        displayManager.lightdm.enable = false;
         displayManager.sddm.enable = true;
-        displayManager.sessionPackages = [ pkgs-ext.hyprland ];
     };
 
     hardware = {
