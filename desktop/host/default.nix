@@ -3,7 +3,6 @@
 {
     imports = [ 
         ./hdw.nix 
-        # pkgs-ext.hyprland.nixosModules.default
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -32,8 +31,8 @@
         layout = "de";
         xkbVariant = "";
         videoDrivers = [ "nvidia" ];
-        displayManager.lightdm.enable = false;
         displayManager.sddm.enable = true;
+        displayManager.sessionPackages = [ pkgs-ext.hyprland ];
     };
 
     hardware = {
