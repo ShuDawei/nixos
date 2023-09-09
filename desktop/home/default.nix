@@ -26,6 +26,7 @@
             hyprpaper
             neofetch
             wl-clipboard
+            zig
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
