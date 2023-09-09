@@ -3,7 +3,7 @@
 {
     imports = [ 
         ./hdw.nix 
-        pkgs-ext.hyprland.nixosModules.default
+        # pkgs-ext.hyprland.nixosModules.default
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
