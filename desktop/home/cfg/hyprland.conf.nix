@@ -78,6 +78,8 @@ bindm = SUPER, mouse:273, resizewindow
 binde = , XF86AudioRaiseVolume, exec, pamixer -i 1
 binde = , XF86AudioLowerVolume, exec, pamixer -d 1
 
+bind = , PRINT, exec, grimblast --freeze copy area
+
 exec-once = hyprpaper
 exec-once = waybar
 ''
