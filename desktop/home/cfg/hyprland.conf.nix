@@ -79,7 +79,7 @@ binde = , XF86AudioRaiseVolume, exec, pamixer -i 1
 binde = , XF86AudioLowerVolume, exec, pamixer -d 1
 
 bind = , PRINT, exec, grimblast --freeze copy area
-# bind = , KP_ADD, pass, ^discord$
+bind = , KP_ADD, pass, ^discord$
 
 exec-once = hyprpaper
 exec-once = waybar

@@ -28,6 +28,8 @@
             wl-clipboard
             zig
             lm_sensors
+            rust-analyzer
+            lua-language-server
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
