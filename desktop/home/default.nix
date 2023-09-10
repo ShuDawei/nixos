@@ -30,7 +30,7 @@
             lm_sensors
             rust-analyzer
             lua-language-server
-            llvmPackages_16.stdenv
+            libstdcxx5
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
