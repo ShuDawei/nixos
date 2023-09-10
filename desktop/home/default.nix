@@ -11,7 +11,7 @@
         ./cfg/git.nix
         ./cfg/gtk.nix
         ./cfg/hyprland.nix
-        # ./cfg/neovim.nix
+        ./cfg/neovim.nix
         ./cfg/nushell.nix
         ./cfg/waybar.nix
     ];
@@ -20,7 +20,6 @@
         username = "shudawei";
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
-            neovim
             discord
             bemenu
             pamixer
