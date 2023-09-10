@@ -4,7 +4,7 @@
     programs.neovim = {
         enable = true;
         plugins = with pkgs; [
-            vimPlugins.nvim-treesitter.withPlugins (p: [])
+            (vimPlugins.nvim-treesitter.withPlugins (p: []))
         ];
     };
 }
