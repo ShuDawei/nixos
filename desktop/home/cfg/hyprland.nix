@@ -9,7 +9,7 @@
     };
 
     home. file.".config/hypr/hyprpaper.conf".text = ''
-        preload = ~/Downloads/rose_pine_circle.png
-        wallpaper = , ~/Downloads/rose_pine_circle.png
+        preload = ~/Downloads/rose_pine_contourline.png
+        wallpaper = , ~/Downloads/rose_pine_contourline.png
         '';
 }
