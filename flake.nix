@@ -7,6 +7,10 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        neovim = {
+            url = "github:neovim/neovim/stable?dir=contrib";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         hyprland = {
             url = "github:hyprwm/Hyprland";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +29,7 @@
             config.allowUnfree = true;
         };
         pkgs-ext = {
-            inherit (inputs) home-manager hyprland hyprland-contrib;
+            inherit (inputs) home-manager neovim hyprland hyprland-contrib;
         };
     in
     {
