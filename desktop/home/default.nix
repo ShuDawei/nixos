@@ -20,7 +20,7 @@
         username = "shudawei";
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
-            eww
+            eww-wayland
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
             discord
             bemenu
