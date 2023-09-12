@@ -21,7 +21,7 @@
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
             rustup
-            pkgs-ext.eww.packages.${pkgs.system}.eww-wayland
+            # pkgs-ext.eww.packages.${pkgs.system}.eww-wayland
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
             discord
             bemenu
