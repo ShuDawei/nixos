@@ -28,7 +28,7 @@
     };
 
     fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetbrainsMono" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
     programs.hyprland = {
