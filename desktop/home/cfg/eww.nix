@@ -1,5 +1,8 @@
 { ... }:
 
 {
-    programs.eww.enable = true;
+    programs.eww = {
+        enable = true;
+        configDir = ./eww.conf;
+    };
 }

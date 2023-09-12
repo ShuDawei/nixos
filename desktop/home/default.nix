@@ -6,7 +6,7 @@
         ./cfg/alacritty.nix
         ./cfg/dunst.nix
         ./cfg/easyeffects.nix
-        # ./cfg/eww.nix
+        ./cfg/eww.nix
         ./cfg/firefox.nix
         ./cfg/gh.nix
         ./cfg/git.nix
@@ -32,7 +32,6 @@
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
-            pkgs-ext.eww.packages.${pkgs.system}.eww-wayland
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
