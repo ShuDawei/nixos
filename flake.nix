@@ -33,7 +33,7 @@
             config.allowUnfree = true;
         };
         pkgs-ext = {
-            inherit (inputs) home-manager neovim hyprland hyprland-contrib;
+            inherit (inputs) home-manager neovim hyprland hyprland-contrib nixd;
         };
     in
     {
