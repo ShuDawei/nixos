@@ -1,4 +1,20 @@
 ''
+$base           = 0xff191724
+$surface        = 0xff1f1d2e
+$overlay        = 0xff26233a
+$muted          = 0xff6e6a86
+$subtle         = 0xff908caa
+$text           = 0xffe0def4
+$love           = 0xffeb6f92
+$gold           = 0xfff6c177
+$rose           = 0xffebbcba
+$pine           = 0xff31748f
+$foam           = 0xff9ccfd8
+$iris           = 0xffc4a7e7
+$highlightLow   = 0xff21202e
+$highlightMed   = 0xff403d52
+$highlightHigh  = 0xff524f67
+
 monitor =     DP-1, 1920x1080@240, 0x0   , 1
 monitor = HDMI-A-1, 1920x1080@60 , 1920x0, 1
 
@@ -26,9 +42,9 @@ input {
 general {
     gaps_in = 8
     gaps_out = 48
-    border_size = 0
-    col.active_border = rgb(00ffff) rgb(ff00ff) 45deg
-    col.inactive_border = rgb(222222)
+    border_size = 2
+    col.active_border = $rose $pine 45deg
+    col.inactive_border = $muted
     layout = master
 }
 
