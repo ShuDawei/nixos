@@ -21,7 +21,7 @@
         packages = with pkgs; [
             rustup
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
-            pkgs-ext.eww.packages.${pkgs.system}.eww-wayland
+            (eww.override { withWayland = true; })
             discord
             bemenu
             pamixer
