@@ -6,7 +6,6 @@
         ./cfg/alacritty.nix
         ./cfg/dunst.nix
         ./cfg/easyeffects.nix
-        ./cfg/eww.nix
         ./cfg/firefox.nix
         ./cfg/gh.nix
         ./cfg/git.nix
@@ -20,6 +19,7 @@
         username = "shudawei";
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
+            rustup
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
             discord
             bemenu
@@ -29,7 +29,7 @@
             wl-clipboard
             zig
             lm_sensors
-            rust-analyzer
+            # rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
 
