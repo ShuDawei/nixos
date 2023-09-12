@@ -3,6 +3,6 @@
 {
     programs.eww = {
         enable = true;
-        configDir = ./eww.conf;
+        configDir = ./eww;
     };
 }
