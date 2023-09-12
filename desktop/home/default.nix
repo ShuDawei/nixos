@@ -20,7 +20,6 @@
         username = "shudawei";
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
-            eww-wayland
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
             discord
             bemenu
@@ -33,6 +32,7 @@
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
+            pkgs-ext.eww.packages.${pkgs.system}.eww-wayland
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
