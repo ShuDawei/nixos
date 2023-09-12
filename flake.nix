@@ -19,10 +19,6 @@
             url = "github:hyprwm/contrib";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        eww = {
-            url = "github:elkowar/eww";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         nixd = {
             url = "github:nix-community/nixd";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +33,7 @@
             config.allowUnfree = true;
         };
         pkgs-ext = {
-            inherit (inputs) home-manager neovim hyprland hyprland-contrib eww nixd;
+            inherit (inputs) home-manager neovim hyprland hyprland-contrib nixd;
         };
     in
     {
