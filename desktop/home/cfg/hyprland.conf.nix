@@ -25,7 +25,7 @@ input {
 
 general {
     gaps_in = 8
-    gaps_out = 24
+    gaps_out = 48
     border_size = 0
     col.active_border = rgb(00ffff) rgb(ff00ff) 45deg
     col.inactive_border = rgb(222222)
