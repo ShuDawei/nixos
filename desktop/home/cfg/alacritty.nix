@@ -5,6 +5,20 @@
         enable = true;
         settings = {
             shell.program = "nu";
+            font = {
+                normal = {
+                    family = "JetBrains Mono NL Nerd Font";
+                    style = "Regular";
+                };
+                bold = {
+                    family = "JetBrains Mono NL Nerd Font";
+                    style = "Bold";
+                };
+                italic = {
+                    family = "JetBrains Mono NL Nerd Font";
+                    style = "Italic";
+                };
+            };
             colors = {
                 primary = {
                     background = "0x191724";
