@@ -27,6 +27,10 @@
         keyMap = "de";
     };
 
+    fonts.packages = with pkgs; [
+        (nerdfonts.override { fonts = [ "JetbrainsMono" ]; })
+    ];
+
     programs.hyprland = {
         enable = true;
         enableNvidiaPatches = true;
