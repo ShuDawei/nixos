@@ -5,7 +5,6 @@
         enable = true;
         settings = {
             shell.program = "nu";
-            window.opacity = 0.5;
             colors = {
                 primary = {
                     background = "0x191724";
