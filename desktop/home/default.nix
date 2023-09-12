@@ -6,6 +6,7 @@
         ./cfg/alacritty.nix
         ./cfg/dunst.nix
         ./cfg/easyeffects.nix
+        ./cfg/eww.nix
         ./cfg/firefox.nix
         ./cfg/gh.nix
         ./cfg/git.nix
