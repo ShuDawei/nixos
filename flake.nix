@@ -20,7 +20,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         nixd = {
-            url = "github:nix-community/nixd"
+            url = "github:nix-community/nixd";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
