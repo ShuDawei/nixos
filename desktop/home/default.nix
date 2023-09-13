@@ -7,6 +7,7 @@
         ./cfg/dunst.nix
         # ./cfg/easyeffects.nix
         ./cfg/firefox.nix
+        ./cfg/fzf.nix
         ./cfg/gh.nix
         ./cfg/git.nix
         ./cfg/gtk.nix
