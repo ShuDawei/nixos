@@ -39,7 +39,6 @@
 
     programs.steam.enable = true;
 
-    services.flatpak.enable = true;
     services.xserver = {
         enable = true;
         layout = "de";
