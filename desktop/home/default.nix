@@ -5,7 +5,7 @@
         pkgs-ext.hyprland.homeManagerModules.default
         ./cfg/alacritty.nix
         ./cfg/dunst.nix
-        # ./cfg/easyeffects.nix
+        ./cfg/easyeffects.nix
         ./cfg/firefox.nix
         ./cfg/fzf.nix
         ./cfg/gh.nix
