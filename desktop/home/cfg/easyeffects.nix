@@ -1,5 +1,8 @@
 { ... }:
 
 {
-    services.easyeffects.enable = true;
+    services.easyeffects = {
+        enable = true;
+        preset = "LoudnessEqualizer";
+    };
 }
