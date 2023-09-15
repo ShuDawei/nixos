@@ -6,7 +6,6 @@
         ./cfg/alacritty.nix
         ./cfg/btop.nix
         ./cfg/dunst.nix
-        # ./cfg/easyeffects.nix
         ./cfg/firefox.nix
         ./cfg/fzf.nix
         ./cfg/gh.nix
@@ -25,12 +24,10 @@
             (eww.override { withWayland = true; })
             discord
             bemenu
-            pamixer
             hyprpaper
-            neofetch
+            freshfetch
             wl-clipboard
             zig
-            lm_sensors
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd

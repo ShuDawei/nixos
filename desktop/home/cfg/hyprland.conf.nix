@@ -40,8 +40,8 @@ input {
 }
 
 general {
-    gaps_in = 8
-    gaps_out = 24
+    gaps_in = 16
+    gaps_out = 8
     border_size = 2
     col.active_border = $rose $pine 45deg
     col.inactive_border = $muted
