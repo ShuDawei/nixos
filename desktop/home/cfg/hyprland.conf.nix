@@ -91,8 +91,8 @@ bind = SUPER SHIFT, 0, movetoworkspace, 10
 bindm = SUPER, mouse:272, movewindow
 bindm = SUPER, mouse:273, resizewindow
 
-binde = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK 0.01+
-binde = , XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK 0.01-
+binde = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.01+
+binde = , XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.01-
 # bind = , KP_ADD, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE 1
 
 bind = , PRINT, exec, grimblast --freeze copy area
