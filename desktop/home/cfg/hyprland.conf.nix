@@ -48,7 +48,7 @@ general {
 }
 
 decoration {
-    rounding = 8
+    rounding = 4
     drop_shadow = yes
     shadow_range = 4
     shadow_render_power = 3
