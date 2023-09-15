@@ -13,7 +13,9 @@
         ./cfg/gtk.nix
         ./cfg/hyprland.nix
         ./cfg/nushell.nix
+        ./cfg/pipewire.nix
         ./cfg/waybar.nix
+        ./cfg/wireplumber.nix
     ];
 
     home = {
