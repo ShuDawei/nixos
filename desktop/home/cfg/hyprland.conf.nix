@@ -35,7 +35,7 @@ env = NIXOS_OZONE_WL, 1
 
 input {
     kb_layout = de
-    follow_mouse = 2
+    follow_mouse = 1
     sensitivity = -0.25 # -1.0 - 1.0, 0 means no modification.
 }
 
