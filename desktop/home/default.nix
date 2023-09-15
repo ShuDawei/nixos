@@ -33,6 +33,7 @@
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
+            socat
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
