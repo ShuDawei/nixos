@@ -23,7 +23,7 @@
         packages = with pkgs; [
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
             (eww.override { withWayland = true; })
-            # discord
+            discord
             bemenu
             pamixer
             hyprpaper
