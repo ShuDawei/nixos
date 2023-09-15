@@ -99,4 +99,5 @@ bind = , PRINT, exec, grimblast --freeze copy area
 
 exec-once = hyprpaper
 exec-once = waybar
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 ''
