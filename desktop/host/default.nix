@@ -16,7 +16,6 @@
         };
         efi.canTouchEfiVariables = true;
     };
-    boot.supportedFilesystems = [ "ntfs" ];
 
     networking.hostName = "desktop";
     networking.networkmanager.enable = true; 
@@ -39,7 +38,6 @@
 
     programs.steam.enable = true;
 
-    services.flatpak.enable = true;
     services.xserver = {
         enable = true;
         layout = "de";
@@ -75,7 +73,7 @@
     };
 
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     users.users = {
         shudawei = {
@@ -83,7 +81,6 @@
             extraGroups = [ "wheel" "networkmanager" ];
         };
     };
-    programs.dconf.enable = true;
 
     system.stateVersion = "23.05";
 }
