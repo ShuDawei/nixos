@@ -8,7 +8,7 @@
             font = {
                 normal = {
                     family = "JetBrains Mono NL Nerd Font";
-                    style = "SemiBold";
+                    style = "Bold";
                 };
                 bold = {
                     family = "JetBrains Mono NL Nerd Font";
@@ -16,7 +16,7 @@
                 };
                 italic = {
                     family = "JetBrains Mono NL Nerd Font";
-                    style = "Italic";
+                    style = "BoldItalic";
                 };
             };
             colors = {
