@@ -2,6 +2,7 @@
 
 {
     imports = [ 
+        pkgs-ext.hyprland.nixosModules.default
         ./hdw.nix 
     ];
 
@@ -32,6 +33,7 @@
 
     programs.hyprland = {
         enable = true;
+        package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
         enableNvidiaPatches = true;
         xwayland.enable = true;
     };

@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgs, pkgs-ext, ... }:
 
 {
     wayland.windowManager.hyprland = {
         enable = true;
+        package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
         enableNvidiaPatches = true;
         xwayland.enable = true;
         extraConfig = import ./hyprland.conf.nix;
