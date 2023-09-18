@@ -9,7 +9,7 @@
         extraConfig = import ./hyprland.conf.nix;
     };
 
-    home. file.".config/hypr/hyprpaper.conf".text = ''
+    home.file.".config/hypr/hyprpaper.conf".text = ''
         preload = ~/Downloads/rose_pine_contourline.png
         wallpaper = , ~/Downloads/rose_pine_contourline.png
         '';
