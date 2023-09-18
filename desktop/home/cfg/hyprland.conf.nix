@@ -97,6 +97,6 @@ binde = , XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SIN
 bind = , PRINT, exec, grimblast --freeze copy area
 
 exec-once = hyprpaper
-exec-once = waybar
+exec-once = eww open bar
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 ''
