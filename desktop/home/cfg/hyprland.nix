@@ -10,6 +10,7 @@
     };
 
     home.file.".config/hypr/hyprpaper.conf".text = ''
+        splash = true;
         preload = ~/Downloads/rose_pine_contourline.png
         wallpaper = , ~/Downloads/rose_pine_contourline.png
         '';

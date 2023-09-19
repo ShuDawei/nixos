@@ -90,13 +90,14 @@ bind = SUPER SHIFT, 0, movetoworkspace, 10
 bindm = SUPER, mouse:272, movewindow
 bindm = SUPER, mouse:273, resizewindow
 
-binde = , XF86AudioRaiseVolume, exec, nu -c "source ~/.config/nushell/commands.nu; vol inc"
-binde = , XF86AudioLowerVolume, exec, nu -c "source ~/.config/nushell/commands.nu; vol dec"
-bind = , KP_ADD, exec, nu -c "source ~/.config/nushell/commands.nu; toggle-mute"
+binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+
+binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-
+bind = , KP_ADD, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 bind = , PRINT, exec, grimblast --freeze copy area
 
 exec-once = hyprpaper
 exec-once = eww open bar
+exec-once = eww open mid
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 ''
