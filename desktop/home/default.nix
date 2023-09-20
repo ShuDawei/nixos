@@ -29,7 +29,7 @@
             hyprpaper
             freshfetch
             wl-clipboard
-            zig
+            gnumake
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
