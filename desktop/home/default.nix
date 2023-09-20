@@ -29,12 +29,12 @@
             hyprpaper
             freshfetch
             wl-clipboard
-            gnumake
             rust-analyzer
             lua-language-server
             pkgs-ext.nixd.packages.${pkgs.system}.nixd
             socat
             lm_sensors
+            gcc
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
