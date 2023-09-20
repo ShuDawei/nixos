@@ -44,7 +44,7 @@ general {
     border_size = 2
     col.active_border = $rose $pine 45deg
     col.inactive_border = $muted
-    layout = master
+    layout = dwindle
 }
 
 decoration {
