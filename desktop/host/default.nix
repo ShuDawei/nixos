@@ -31,12 +31,12 @@
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-    programs.hyprland = {
-        enable = true;
-        package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
-        enableNvidiaPatches = true;
-        xwayland.enable = true;
-    };
+    # programs.hyprland = {
+    #     enable = true;
+    #     package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
+    #     enableNvidiaPatches = true;
+    #     xwayland.enable = true;
+    # };
 
     programs.steam.enable = true;
 
