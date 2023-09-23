@@ -35,6 +35,7 @@
             socat
             lm_sensors
             gcc
+            alejandra
 
             hyprpicker
             pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
