@@ -1,12 +1,13 @@
-{ pkgs, pkgs-ext, ... }:
-
 {
-    imports = [ 
-        # pkgs-ext.hyprland.nixosModules.default
-        ./hdw.nix 
+    pkgs,
+    pkgs-ext,
+    ...
+}: {
+    imports = [
+        ./hdw.nix
     ];
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.experimental-features = ["nix-command" "flakes"];
 
     boot.loader = {
         grub = {
@@ -19,7 +20,7 @@
     };
 
     networking.hostName = "desktop";
-    networking.networkmanager.enable = true; 
+    networking.networkmanager.enable = true;
 
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
@@ -28,7 +29,7 @@
     };
 
     fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
 
     programs.hyprland = {
@@ -45,7 +46,7 @@
         enable = true;
         layout = "de";
         xkbVariant = "";
-        videoDrivers = [ "nvidia" ];
+        videoDrivers = ["nvidia"];
         displayManager.lightdm.enable = false;
         displayManager.sddm.enable = true;
     };
@@ -76,12 +77,12 @@
     };
 
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
     users.users = {
         shudawei = {
             isNormalUser = true;
-            extraGroups = [ "wheel" "networkmanager" ];
+            extraGroups = ["wheel" "networkmanager"];
         };
     };
 

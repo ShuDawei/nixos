@@ -1,8 +1,6 @@
-{ ... }:
-
-{
-    home.file.".config/pipewire" = {
-        source = ./pipewire;
-        recursive = true;
-    };
+{...}: {
+  home.file.".config/pipewire" = {
+    source = ./pipewire;
+    recursive = true;
+  };
 }
