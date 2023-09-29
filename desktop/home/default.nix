@@ -29,9 +29,6 @@
                 cargo
                 rust-analyzer
 
-                pnpm
-                pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app
-
                 (eww.override {withWayland = true;})
                 discord
                 bemenu
