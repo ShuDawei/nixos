@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     getchoo = {
-        url = "github:getchoo/nixp-exprs";
+        url = "github:getchoo/nix-exprs";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };
