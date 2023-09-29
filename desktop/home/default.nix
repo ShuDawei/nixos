@@ -25,13 +25,16 @@
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
+                rustc
+                cargo
+                rust-analyzer
+
                 (eww.override {withWayland = true;})
                 discord
                 bemenu
                 hyprpaper
                 freshfetch
                 wl-clipboard
-                rust-analyzer
                 lua-language-server
                 pkgs-ext.nixd.packages.${pkgs.system}.nixd
                 socat
