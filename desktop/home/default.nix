@@ -30,17 +30,6 @@
                 cargo
                 rust-analyzer
 
-                # (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
-                #     pnpm-deps = "dklafj ls";
-                # }))
-                # (builtins.trace pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app)
-
-                # (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
-                #     pnpm-deps = prev.pnpm-deps.overrideAttrs {
-                #         outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
-                #     };
-                # }))
-
                 (eww.override {withWayland = true;})
                 discord
                 bemenu
