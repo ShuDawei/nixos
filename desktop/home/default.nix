@@ -2,7 +2,8 @@
     pkgs,
     pkgs-ext,
     ...
-}: {
+}: 
+{
     imports = [
         pkgs-ext.hyprland.homeManagerModules.default
             ./cfg/alacritty.nix
@@ -29,11 +30,13 @@
                 cargo
                 rust-analyzer
 
-                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
-                    pnpm-deps = prev.pnpm-deps.overrideAttrs {
-                        outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
-                    };
-                }))
+                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: builtins.trace "${prev}" {}))
+
+                # (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
+                #     pnpm-deps = prev.pnpm-deps.overrideAttrs {
+                #         outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
+                #     };
+                # }))
 
                 (eww.override {withWayland = true;})
                 discord
