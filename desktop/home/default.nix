@@ -29,8 +29,36 @@
                 cargo
                 rust-analyzer
 
-                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
-                    pnpm-deps.outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
+                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideDerivation (old: {
+                                                                                           pnpm-deps = stdenvNoCC.mkDerivation {
+                                                                                           pname = "${pname}-pnpm-deps";
+                                                                                           inherit src version;
+
+                                                                                           nativeBuildInputs = [
+                                                                                           jq
+                                                                                           moreutils
+                                                                                           pnpm
+                                                                                           ];
+
+# https://github.com/NixOS/nixpkgs/blob/763e59ffedb5c25774387bf99bc725df5df82d10/pkgs/applications/misc/pot/default.nix#L56
+                                                                                           installPhase = ''
+                                                                                           export HOME=$(mktemp -d)
+
+                                                                                           cd theseus_gui
+                                                                                           pnpm config set store-dir $out
+                                                                                           pnpm install --frozen-lockfile --no-optional --ignore-script
+
+                                                                                           rm -rf $out/v3/tmp
+                                                                                           for f in $(find $out -name "*.json"); do
+                                                                                               sed -i -E -e 's/"checkedAt":[0-9]+,//g' $f
+                                                                                                   jq --sort-keys . $f | sponge $f
+                                                                                                       done
+                                                                                                       '';
+
+                                                                                           dontFixup = true;
+                                                                                           outputHashMode = "recursive";
+                                                                                           outputHash = "sha256-8Qk2eqMws5kJ0Yn9JSwaiw1KFNpUaJ1wR9B+DE/fnFw=";
+                                                                                           };
                 }))
 
                 (eww.override {withWayland = true;})
