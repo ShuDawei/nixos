@@ -29,7 +29,7 @@
                 cargo
                 rust-analyzer
 
-                pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app
+                pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app-unwrapped
 
                 (eww.override {withWayland = true;})
                 discord
