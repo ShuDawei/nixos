@@ -29,8 +29,8 @@
                 cargo
                 rust-analyzer
 
-                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: rec {
-                    pnpm-deps = pnpm-deps.overrideAttrs {
+                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
+                    pnpm-deps = prev.pnpm-deps.overrideAttrs {
                         outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
                     };
                 }))
