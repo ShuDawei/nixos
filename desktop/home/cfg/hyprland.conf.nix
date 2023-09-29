@@ -29,6 +29,7 @@
   workspace = 9, monitor:HDMI-A-1
   workspace = 10, monitor:HDMI-A-1
 
+  env = EDITOR, nvim
   env = WLR_NO_HARDWARE_CURSORS, 1
   env = NIXOS_OZONE_WL, 1
 
