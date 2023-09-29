@@ -23,6 +23,10 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    getchoo = {
+        url = "github:getchoo/nixp-exprs";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
