@@ -29,7 +29,9 @@
                 cargo
                 rust-analyzer
 
-                pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app
+                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs {
+                    outputHash = "sha256-gRQfWrAY/2XxiVSHtQd4YKruJWjkpAB5OsXZMmV0iDs=";
+                })
 
                 (eww.override {withWayland = true;})
                 discord
