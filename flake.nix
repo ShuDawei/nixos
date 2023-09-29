@@ -23,6 +23,9 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    getchoo = {
+      url = "github:getchoo/nix-exprs";
+    };
   };
 
   outputs = {
@@ -36,7 +39,7 @@
       config.allowUnfree = true;
     };
     pkgs-ext = {
-      inherit (inputs) home-manager neovim hyprland hyprland-contrib nixd;
+      inherit (inputs) home-manager neovim hyprland hyprland-contrib nixd getchoo;
     };
   in {
     nixosConfigurations = {

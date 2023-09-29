@@ -7,6 +7,8 @@
         ./hdw.nix
     ];
 
+    environment.systemPackages = [pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app];
+
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     boot.loader = {
