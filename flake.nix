@@ -58,9 +58,6 @@
               users.shudawei = import ./desktop/home;
             };
           }
-          {
-              environment.systemPackages = [pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app];
-          }
         ];
       };
     };
