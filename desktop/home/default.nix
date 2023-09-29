@@ -30,7 +30,8 @@
                 cargo
                 rust-analyzer
 
-                (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: builtins.trace final {}))
+                # (builtins.trace pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app)
+                # (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.override (drv: builtins.trace drv.defaultCrateOverrides {}))
 
                 # (pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (final: prev: {
                 #     pnpm-deps = prev.pnpm-deps.overrideAttrs {
