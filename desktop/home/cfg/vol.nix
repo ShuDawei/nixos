@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
-(pkgs.writeShellScriptBin "vol" ''
+((pkgs.writeShellScriptBin "vol" ''
     echo "test"
-''.overrideAttrs (old: {
+'').overrideAttrs (old: {
     buildCommand = "${old.buildCommand}\n patchShebangs ${pkgs.nushell}";
     }))
