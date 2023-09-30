@@ -17,7 +17,6 @@
             ./cfg/hyprland.nix
             ./cfg/nushell.nix
             ./cfg/pipewire.nix
-            ./cfg/vol.nix
             ./cfg/waybar.nix
             ./cfg/wireplumber.nix
     ];
@@ -27,6 +26,8 @@
         homeDirectory = "/home/shudawei";
         packages = with pkgs; [
             pkgs-ext.neovim.packages.${pkgs.system}.neovim
+                (import ./cfg/vol.nix { inherit pkgs; })
+                            
                 rustc
                 cargo
                 rust-analyzer
