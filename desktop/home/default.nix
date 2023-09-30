@@ -23,10 +23,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      (writeScriptBin "test" ''
-        #! ${pkgs.nushell}
-        print "moin"
-      '')
+      (import ./scripts/vol.nix pkgs.writeScriptBin)
       pkgs-ext.neovim.packages.${pkgs.system}.neovim
 
       rustc
