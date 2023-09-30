@@ -2,6 +2,6 @@
 
 (pkgs.writeScriptBin "vol" "print test").overrideAttrs(old: {
 
-  buildCommand = "${old.buildCommand}\n patchShebangs ${pkgs.nushell}";
+  buildCommand = "${old.buildCommand}\n patchShebangs test";
 
 })
