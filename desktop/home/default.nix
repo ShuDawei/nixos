@@ -17,6 +17,7 @@
             ./cfg/hyprland.nix
             ./cfg/nushell.nix
             ./cfg/pipewire.nix
+            ./cfg/vol.nix
             ./cfg/waybar.nix
             ./cfg/wireplumber.nix
     ];
