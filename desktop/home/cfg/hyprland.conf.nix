@@ -91,9 +91,9 @@
   bindm = SUPER, mouse:272, movewindow
   bindm = SUPER, mouse:273, resizewindow
 
-  binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+
-  binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-
-  bind = , KP_ADD, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+  binde = , XF86AudioRaiseVolume, exec, vol inc
+  binde = , XF86AudioLowerVolume, exec, vol dec
+  bind = , KP_ADD, exec, vol mic
 
   bind = , PRINT, exec, grimblast --freeze copy area
 
