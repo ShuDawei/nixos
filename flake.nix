@@ -15,6 +15,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xdg-desktop-portal-hyprland = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +40,7 @@
       config.allowUnfree = true;
     };
     pkgs-ext = {
-      inherit (inputs) home-manager neovim hyprland hyprland-contrib nixd;
+      inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
     };
   in {
     nixosConfigurations = {
