@@ -12,11 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland/v0.30.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xdg-desktop-portal-hyprland = {
-      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+      url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland-contrib = {
