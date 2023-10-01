@@ -64,16 +64,15 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1695424072,
-        "narHash": "sha256-a0nqm82brOC0QroGOXxcIKxOMAfl9I6pfFOYjCeRzO0=",
+        "lastModified": 1696159570,
+        "narHash": "sha256-Ia+eMXsjN2n3YnCFtrloYTbYUBHWpsHAfbayTa0vCnw=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "1b48642fd15c433c53876f1b933dcd46265caf8f",
+        "rev": "161fee1d8236978eca44efdbede8015763533482",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "ref": "v0.30.0",
         "repo": "Hyprland",
         "type": "github"
       }
@@ -271,18 +270,18 @@
       "flake": false,
       "locked": {
         "host": "gitlab.freedesktop.org",
-        "lastModified": 1695277534,
-        "narHash": "sha256-LEIUGXvKR5DYFQUTavC3yifcObvG4XZUUHfxXmu8nEM=",
+        "lastModified": 1695919988,
+        "narHash": "sha256-4RBgIZHaVqH0m1POnfzYRzwCWxifIKH4xQ0kCn2LGkA=",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "98a745d926d8048bc30aef11b421df207a01c279",
+        "rev": "c2aa7fd965cb7ee8bed24f4122b720aca8f0fc1e",
         "type": "gitlab"
       },
       "original": {
         "host": "gitlab.freedesktop.org",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "98a745d926d8048bc30aef11b421df207a01c279",
+        "rev": "c2aa7fd965cb7ee8bed24f4122b720aca8f0fc1e",
         "type": "gitlab"
       }
     },
@@ -295,16 +294,15 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1694025408,
-        "narHash": "sha256-oJNhGfZH8Z2w3ztXdzsYVg32//cWEcPVDM3+tp/ZVfU=",
+        "lastModified": 1695763382,
+        "narHash": "sha256-G2SdRhukdycVhxXlLkNvR6+NTqU1OiWqvPwVUhLd0e0=",
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
-        "rev": "022469529c8bc95acf222dc5a62389b04c8b1205",
+        "rev": "f9461b0b7d3071347390feee534638555ff76c7d",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "ref": "v1.0.0",
         "repo": "xdg-desktop-portal-hyprland",
         "type": "github"
       }
