@@ -19,6 +19,8 @@
     ./cfg/wireplumber.nix
   ];
 
+  programs.obs-studio.enable = true;
+
   home = {
     username = "shudawei";
     homeDirectory = "/home/shudawei";
