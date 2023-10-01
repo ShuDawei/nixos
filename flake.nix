@@ -50,6 +50,7 @@
         modules = [
           ./desktop/host
           pkgs-ext.home-manager.nixosModules.home-manager
+          pkgs-ext.hyprland.homeManagerModules.default
           {
             home-manager = {
               useGlobalPkgs = true;

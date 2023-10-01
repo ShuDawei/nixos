@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    pkgs-ext.hyprland.homeManagerModules.default
     ./cfg/alacritty.nix
     ./cfg/btop.nix
     ./cfg/dunst.nix
