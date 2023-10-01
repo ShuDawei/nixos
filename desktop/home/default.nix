@@ -25,7 +25,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      (import ./scripts/vol.nix pkgs.writeScriptBin)
+      (import ./scripts/vol.nix pkgs)
       pkgs-ext.neovim.packages.${pkgs.system}.neovim
 
       rustc

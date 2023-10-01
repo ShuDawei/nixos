@@ -1,2 +1,5 @@
-script:
-script "vol" (builtins.readFile ./vol.nu)
+pkgs:
+pkgs.writeScriptBin "vol" ''
+  #! ${pkgs.nushell}/bin/nu
+  ${(builtins.readFile ./vol.nu)}
+''
