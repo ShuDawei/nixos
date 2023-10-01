@@ -36,8 +36,8 @@
 
   programs.hyprland = {
     enable = true;
-    package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
-    portalPackage = pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default;
+    #package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
+    #portalPackage = pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     xwayland.enable = true;
   };
