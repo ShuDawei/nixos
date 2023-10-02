@@ -2,7 +2,12 @@
   pkgs,
   pkgs-ext,
   ...
-}: {
+}: let
+  hyprland-pkg = pkgs-ext.hyprland.packages.${pkgs.system}.default.override {
+    enableXWayland = true;
+    enableNvidiaPatches = true;
+  };
+in {
   imports = [
     ./hdw.nix
   ];
@@ -34,13 +39,17 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
-  programs.hyprland = {
-    enable = true;
-    #package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
-    #portalPackage = pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default;
-    enableNvidiaPatches = true;
-    xwayland.enable = true;
-  };
+  #programs.hyprland = {
+  #  enable = true;
+  #  package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
+  #  portalPackage = pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default;
+  #  enableNvidiaPatches = true;
+  #  xwayland.enable = true;
+  #};
+  environment.systemPackages = [hyprland-pkg];
+  programs.dconf.enable = true;
+  programs.xwayland.enable = true;
+  security.polkit.enable = true;
 
   programs.steam.enable = true;
 
@@ -52,6 +61,7 @@
     videoDrivers = ["nvidia"];
     displayManager.lightdm.enable = false;
     displayManager.sddm.enable = true;
+    displayManager.sessionPackages = [hyprland-pkg];
   };
 
   hardware = {
@@ -80,7 +90,10 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [
+    pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default
+    pkgs.xdg-desktop-portal-gtk
+  ];
 
   users.users = {
     shudawei = {
