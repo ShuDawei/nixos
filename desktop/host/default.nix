@@ -46,7 +46,10 @@ in {
   #  enableNvidiaPatches = true;
   #  xwayland.enable = true;
   #};
-  environment.systemPackages = [hyprland-pkg];
+  environment.systemPackages = [
+    hyprland-pkg
+    pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default
+  ];
   programs.dconf.enable = true;
   programs.xwayland.enable = true;
   security.polkit.enable = true;
