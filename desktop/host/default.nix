@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-ext,
+  config,
   ...
 }: let
   hyprland-pkg = pkgs-ext.hyprland.packages.${pkgs.system}.default.override {
@@ -16,6 +17,8 @@ in {
     experimental-features = ["nix-command" "flakes"];
   };
 
+  boot.extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+  boot.kernelModules = ["v4l2loopback"];
   boot.loader = {
     grub = {
       enable = true;
