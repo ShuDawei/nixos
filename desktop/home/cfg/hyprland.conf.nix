@@ -94,7 +94,7 @@
   binde = , XF86AudioRaiseVolume, exec, vol inc
   binde = , XF86AudioLowerVolume, exec, vol dec
   bind = , KP_ADD, exec, vol mic
-  bind = , KP_SUBSTRACT, pass, ^(com\.obsproject\.Studio)$
+  bind = , KP_SUBTRACT, pass, ^(com\.obsproject\.Studio)$
 
   bind = , PRINT, exec, grimblast --freeze copy area
 
