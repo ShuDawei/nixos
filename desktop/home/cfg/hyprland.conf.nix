@@ -15,8 +15,8 @@
   $highlightMed   = 0xff403d52
   $highlightHigh  = 0xff524f67
 
-  monitor =     DP-1, 1920x1080@240, 0x0   , 1
-  monitor = HDMI-A-1, 1920x1080@60 , 1920x0, 1
+  monitor =     DP-1, 1920x1080@240, 0x0   , 1, bitdepth, 10
+  monitor = HDMI-A-1, 1920x1080@60 , 1920x0, 1, bitdepth, 10
 
   workspace = 1, monitor:DP-1
   workspace = 2, monitor:DP-1
