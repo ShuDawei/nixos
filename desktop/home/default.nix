@@ -27,7 +27,6 @@
     packages = with pkgs; [
       (import ./scripts/vol.nix pkgs)
       pkgs-ext.neovim.packages.${pkgs.system}.neovim
-      pkgs-ext.getchoo.packages.${pkgs.system}.xwaylandvideobridge
 
       rustc
       cargo
