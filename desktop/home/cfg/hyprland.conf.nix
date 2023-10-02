@@ -98,7 +98,7 @@
   bind = , PRINT, exec, grimblast --freeze copy area
 
   exec-once = hyprpaper
-  exec-once = eww open bar
-  exec-once = eww open mid
-  exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+  exec-once = eww open-many bar mid
 ''
+# exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
