@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-ext,
-  theme,
   ...
 }: {
   imports = [

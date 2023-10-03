@@ -47,8 +47,8 @@
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs inputs pkgs-ext;
           theme = import ./theme.nix;
+          inherit pkgs inputs pkgs-ext;
         };
         modules = [
           ./desktop/host
