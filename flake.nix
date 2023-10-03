@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     test = {
-      url = "path:~/nix/nvim";
+      url = "path:/home/shudawei/nix/nvim";
     };
   };
 
