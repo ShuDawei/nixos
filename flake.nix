@@ -27,6 +27,9 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    test = {
+      url = "path:~/nix/nvim";
+    };
   };
 
   outputs = {
@@ -46,8 +49,12 @@
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit pkgs pkgs-ext;};
+        specialArgs = {
+          inherit pkgs inputs pkgs-ext;
+          theme = import ./theme.nix;
+        };
         modules = [
+          inputs.test.homeManagerModules.default
           ./desktop/host
           pkgs-ext.home-manager.nixosModules.home-manager
           {
