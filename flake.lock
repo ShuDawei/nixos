@@ -225,20 +225,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1696261572,
-        "narHash": "sha256-s8TtSYJ1LBpuITXjbPLUPyxzAKw35LhETcajJjCS5f0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0c7ffbc66e6d78c50c38e717ec91a2a14e0622fb",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -247,7 +233,6 @@
         "neovim": "neovim",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs",
-        "test": "test",
         "xdg-desktop-portal-hyprland": "xdg-desktop-portal-hyprland"
       }
     },
@@ -279,21 +264,6 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
-      }
-    },
-    "test": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1696329125,
-        "narHash": "sha256-MSD8UFFcry16fbNBluV0Vhj5CAFpAliNyt4T6zS4Prk=",
-        "path": "/home/shudawei/nix/nvim",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/shudawei/nix/nvim",
-        "type": "path"
       }
     },
     "wlroots": {
