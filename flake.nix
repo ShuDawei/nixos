@@ -42,10 +42,10 @@
     pkgs-ext = {
       inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
     };
-    theme = "import ./theme.nix";
+    theme = import ./theme.nix;
   in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
           inherit pkgs inputs pkgs-ext theme;
@@ -57,7 +57,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = {inherit pkgs pkgs-ext;};
+              extraSpecialArgs = specialArgs;
               users.shudawei = import ./desktop/home;
             };
           }
