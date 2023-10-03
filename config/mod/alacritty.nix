@@ -1,8 +1,4 @@
-{
-  pkgs,
-  theme,
-  ...
-}: {
+{pkgs, ...}: {
   programs.alacritty = {
     enable = true;
     settings = {
