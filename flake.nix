@@ -42,7 +42,7 @@
     pkgs-ext = {
       inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
     };
-    theme = import ./theme.nix;
+    theme = "import ./theme.nix";
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
