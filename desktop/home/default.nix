@@ -1,13 +1,12 @@
 {
   pkgs,
   pkgs-ext,
-  theme,
   ...
 }: {
   imports = [
     # pkgs-ext.hyprland.homeManagerModules.default
     # ./cfg/alacritty.nix
-    # ../../config/mod/alacritty.nix
+    ../../config/mod/alacritty.nix
     ./cfg/btop.nix
     ./cfg/dunst.nix
     ./cfg/firefox.nix
