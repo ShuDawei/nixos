@@ -27,9 +27,6 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    test = {
-      url = "path:/home/shudawei/nix/nvim";
-    };
   };
 
   outputs = {
@@ -54,7 +51,6 @@
           theme = import ./theme.nix;
         };
         modules = [
-          inputs.test.homeManagerModules.default
           ./desktop/host
           pkgs-ext.home-manager.nixosModules.home-manager
           {
