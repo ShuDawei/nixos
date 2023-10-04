@@ -24,31 +24,37 @@
       colors = {
         primary = {
           background = "0x${theme.base00}";
-          foreground = "0x${theme.base05}";
+          foreground = "0x${theme.base06}";
         };
-        cursor = {
-          text = "0x${theme.base00}";
-          cursor = "0x${theme.base05}";
-        };
-        normal = {
-          black = "0x${theme.base00}";
-          red = "0x${theme.base08}";
-          green = "0x${theme.base0B}";
-          yellow = "0x${theme.base0A}";
-          blue = "0x${theme.base0D}";
-          magenta = "0x${theme.base0E}";
-          cyan = "0x${theme.base0C}";
-          white = "0x${theme.base05}";
-        };
-        bright = {
-          black = "0x${theme.base03}";
-          red = "0x${theme.base09}";
-          green = "0x${theme.base01}";
-          yellow = "0x${theme.base02}";
-          blue = "0x${theme.base04}";
-          magenta = "0x${theme.base06}";
-          cyan = "0x${theme.base0F}";
-          white = "0x${theme.base07}";
+        search = {
+          matches = {
+            foreground = "CellBackground";
+            background = "0x${theme.base0A}";
+          };
+          footer_bar = {
+            background = "0x${theme.base01}";
+            foreground = "0x${theme.base06}";
+          };
+          normal = {
+            black = "0x${theme.base01}";
+            magenta = "0x${theme.base0C}";
+            green = "0x${theme.base0D}";
+            yellow = "#ffe97b";
+            blue = "0x${theme.base0B}";
+            red = "0x${theme.base0A}";
+            cyan = "0x${theme.base08}";
+            white = "0x${theme.base04}";
+          };
+          bright = {
+            black = "0x${theme.base02}";
+            magenta = "0x${theme.base0C}";
+            green = "0x${theme.base0D}";
+            yellow = "#ffe97b";
+            blue = "0x${theme.base0B}";
+            red = "0x${theme.base0A}";
+            cyan = "0x${theme.base08}";
+            white = "0x${theme.base06}";
+          };
         };
       };
     };
