@@ -1,4 +1,6 @@
 {
+  scheme = "Oxocarbon Dark";
+  author = "shaunsingh/IBM";
   base00 = "161616";
   base01 = "262626";
   base02 = "393939";
