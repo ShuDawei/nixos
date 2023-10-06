@@ -24,37 +24,31 @@
       colors = {
         primary = {
           background = "0x${theme.base00}";
-          foreground = "0x${theme.base06}";
+          foreground = "0x${theme.base05}";
         };
-        search = {
-          matches = {
-            foreground = "CellBackground";
-            background = "0x${theme.base0A}";
-          };
-          footer_bar = {
-            background = "0x${theme.base01}";
-            foreground = "0x${theme.base06}";
-          };
-          normal = {
-            black = "0x${theme.base01}";
-            magenta = "0x${theme.base0C}";
-            green = "0x${theme.base0D}";
-            yellow = "#ffe97b";
-            blue = "0x${theme.base0B}";
-            red = "0x${theme.base0A}";
-            cyan = "0x${theme.base08}";
-            white = "0x${theme.base04}";
-          };
-          bright = {
-            black = "0x${theme.base02}";
-            magenta = "0x${theme.base0C}";
-            green = "0x${theme.base0D}";
-            yellow = "#ffe97b";
-            blue = "0x${theme.base0B}";
-            red = "0x${theme.base0A}";
-            cyan = "0x${theme.base08}";
-            white = "0x${theme.base06}";
-          };
+        cursor = {
+          text = "0x${theme.base05}";
+          cursor = "0x${theme.base00}";
+        };
+        normal = {
+          black = "0x${theme.base01}";
+          magenta = "0x${theme.base0E}";
+          green = "0x${theme.base0B}";
+          yellow = "0x${theme.base0E}";
+          blue = "0x${theme.base0D}";
+          red = "0x${theme.base08}";
+          cyan = "0x${theme.base0C}";
+          white = "0x${theme.base06}";
+        };
+        bright = {
+          black = "0x${theme.base02}";
+          magenta = "0x${theme.base0E}";
+          green = "0x${theme.base0B}";
+          yellow = "0x${theme.base0E}";
+          blue = "0x${theme.base0D}";
+          red = "0x${theme.base08}";
+          cyan = "0x${theme.base0C}";
+          white = "0x${theme.base07}";
         };
       };
     };
