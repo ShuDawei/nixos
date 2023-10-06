@@ -8,7 +8,7 @@
     package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     xwayland.enable = true;
-    extraConfig = import ./hyprland.conf.nix;
+    extraConfig = import ./conf.nix;
   };
 
   home.file.".config/hypr/hyprpaper.conf".text = ''

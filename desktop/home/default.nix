@@ -4,19 +4,18 @@
   ...
 }: {
   imports = [
-    # pkgs-ext.hyprland.homeManagerModules.default
-    ../../config/mod/alacritty.nix
-    ./cfg/btop.nix
-    ./cfg/dunst.nix
-    ./cfg/firefox.nix
-    ./cfg/fzf.nix
-    ./cfg/gh.nix
-    ./cfg/git.nix
-    ./cfg/gtk.nix
-    ./cfg/hyprland.nix
-    ./cfg/nushell.nix
-    ./cfg/pipewire.nix
-    ./cfg/wireplumber.nix
+    ../../config/mod/alacritty
+    ../../config/mod/btop
+    ../../config/mod/dunst
+    ../../config/mod/firefox
+    ../../config/mod/fzf
+    ../../config/mod/gh
+    ../../config/mod/git
+    ../../config/mod/gtk
+    ../../config/mod/hyprland
+    ../../config/mod/nushell
+    ../../config/mod/pipewire
+    ../../config/mod/wireplumber
   ];
 
   programs.obs-studio.enable = true;
