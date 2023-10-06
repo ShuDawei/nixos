@@ -14,8 +14,8 @@
     ../../config/mod/gtk
     ../../config/mod/hyprland
     ../../config/mod/nushell
-    ../../config/mod/pipewire
-    ../../config/mod/wireplumber
+    ./cfg/pipewire.nix
+    ./cfg/wireplumber.nix
   ];
 
   programs.obs-studio.enable = true;
