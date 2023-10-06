@@ -26,10 +26,6 @@
           background = "0x${theme.base00}";
           foreground = "0x${theme.base05}";
         };
-        cursor = {
-          text = "0x${theme.base05}";
-          cursor = "0x${theme.base00}";
-        };
         normal = {
           black = "0x${theme.base01}";
           magenta = "0x${theme.base0E}";
