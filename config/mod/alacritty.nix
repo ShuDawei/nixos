@@ -23,28 +23,28 @@
       };
       colors = {
         primary = {
-          background = "0x${theme.base00}";
-          foreground = "0x${theme.base05}";
+          background = "0x${theme.bg}";
+          foreground = "0x${theme.fg}";
         };
         normal = {
-          black = "0x${theme.base01}";
-          magenta = "0x${theme.base0E}";
-          green = "0x${theme.base0B}";
-          yellow = "0x${theme.base0E}";
-          blue = "0x${theme.base0D}";
-          red = "0x${theme.base08}";
-          cyan = "0x${theme.base0C}";
-          white = "0x${theme.base06}";
+          black = "0x${theme.bg-d}";
+          magenta = "0x${theme.purple}";
+          green = "0x${theme.green}";
+          yellow = "0x${theme.yellow}";
+          blue = "0x${theme.blue}";
+          red = "0x${theme.red}";
+          cyan = "0x${theme.cyan}";
+          white = "0x${theme.fg-d}";
         };
         bright = {
-          black = "0x${theme.base02}";
-          magenta = "0x${theme.base0E}";
-          green = "0x${theme.base0B}";
-          yellow = "0x${theme.base0E}";
-          blue = "0x${theme.base0D}";
-          red = "0x${theme.base08}";
-          cyan = "0x${theme.base0C}";
-          white = "0x${theme.base07}";
+          black = "0x${theme.bg-l}";
+          magenta = "0x${theme.purple}";
+          green = "0x${theme.green}";
+          yellow = "0x${theme.yellow}";
+          blue = "0x${theme.blue}";
+          red = "0x${theme.red}";
+          cyan = "0x${theme.cyan}";
+          white = "0x${theme.fg-l}";
         };
       };
     };
