@@ -5,15 +5,15 @@
 }: {
   imports = [
     ../shared/home/alacritty
-    ../shared/mod/btop
-    ../shared/mod/dunst
-    ../shared/mod/firefox
-    ../shared/mod/fzf
-    ../shared/mod/gh
-    ../shared/mod/git
-    ../shared/mod/gtk
-    ../shared/mod/hyprland
-    ../shared/mod/nushell
+    ../shared/home/btop
+    ../shared/home/dunst
+    ../shared/home/firefox
+    ../shared/home/fzf
+    ../shared/home/gh
+    ../shared/home/git
+    ../shared/home/gtk
+    ../shared/home/hyprland
+    ../shared/home/nushell
     ./cfg/pipewire.nix
     ./cfg/wireplumber.nix
   ];
