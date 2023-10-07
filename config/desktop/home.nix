@@ -26,7 +26,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      swh-plugins
+      ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       pkgs-ext.neovim.packages.${pkgs.system}.neovim
 
