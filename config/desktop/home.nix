@@ -14,8 +14,10 @@
     ../shared/home/gtk
     ../shared/home/hyprland
     ../shared/home/nushell
-    ./cfg/pipewire.nix
-    ./cfg/wireplumber.nix
+    ../shared/home/pipewire
+    ../shared/home/wireplumber
+    #./cfg/pipewire.nix
+    #./cfg/wireplumber.nix
   ];
 
   programs.obs-studio.enable = true;
