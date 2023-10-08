@@ -14,6 +14,7 @@
     ../shared/home/gtk
     ../shared/home/hyprland
     ../shared/home/nushell
+    ../shared/home/nvim
     ../shared/home/pipewire
     ../shared/home/wireplumber
     #./cfg/pipewire.nix
@@ -28,7 +29,7 @@
     packages = with pkgs; [
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
-      pkgs-ext.neovim.packages.${pkgs.system}.neovim
+      #pkgs-ext.neovim.packages.${pkgs.system}.neovim
 
       rustc
       cargo
