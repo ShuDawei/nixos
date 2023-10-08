@@ -26,6 +26,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+      pkgs-ext.getchoo.packages.${pkgs.system}.modrinth-app
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       pkgs-ext.neovim.packages.${pkgs.system}.neovim
