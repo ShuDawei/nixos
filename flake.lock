@@ -33,6 +33,26 @@
         "type": "github"
       }
     },
+    "getchoo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1696691641,
+        "narHash": "sha256-OYt13HMLytfmoE1+6S+273iS1AbO56HfMpnnnvkcjjw=",
+        "owner": "getchoo",
+        "repo": "nix-exprs",
+        "rev": "664fdadd482d1742e37bbd8b50410f86dc10dcbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "getchoo",
+        "repo": "nix-exprs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -227,6 +247,7 @@
     },
     "root": {
       "inputs": {
+        "getchoo": "getchoo",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
