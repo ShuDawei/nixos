@@ -5,6 +5,7 @@
       cmp-buffer
       cmp-nvim-lsp
       cmp-path
+      dressing-nvim
       fidget-nvim
       gitsigns-nvim
       lualine-nvim
@@ -21,5 +22,9 @@
       telescope-nvim
       vim-fugitive
     ];
+  };
+  home.file.".config/nvim" = {
+    source = ./nvim;
+    recursive = true;
   };
 }
