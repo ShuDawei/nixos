@@ -100,5 +100,5 @@
 
   exec-once = hyprpaper
   exec-once = eww open-many bar mid
-  wl-paste -p --watch wl-copy -p ""
+  exec-once = wl-paste -p --watch wl-copy -p ""
 ''
