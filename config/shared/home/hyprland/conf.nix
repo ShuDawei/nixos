@@ -100,6 +100,5 @@
 
   exec-once = hyprpaper
   exec-once = eww open-many bar mid
+  wl-paste -p --watch wl-copy -p ""
 ''
-# exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
