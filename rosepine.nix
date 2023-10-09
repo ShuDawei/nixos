@@ -11,7 +11,7 @@
   pine = "31748f";
   foam = "9ccfd8";
   iris = "c4a7e7";
-  moss = "61A495";
+  # moss = "61A495"; # idk
   highlight_low = "21202e";
   highlight_med = "403d52";
   highlight_high = "524f67";
