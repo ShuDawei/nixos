@@ -30,7 +30,7 @@
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
-      ../shared/drv/xwaylandvideobridge.nix
+      (callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
       rustc
       cargo
