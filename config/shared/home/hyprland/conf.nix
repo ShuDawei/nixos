@@ -102,4 +102,9 @@
   exec-once = eww open-many bar mid
   #exec-once = wl-paste --watch wl-copy -p ""
   #exec-once = wl-paste -p --watch wl-copy "" 
+
+  windowrulev2 = opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$
+  windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+  windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
+  windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
 ''
