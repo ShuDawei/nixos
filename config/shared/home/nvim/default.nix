@@ -15,7 +15,12 @@
       nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
-      (nvim-treesitter.withAllGrammars.withPlugins (p: p.tree-sitter-nu))
+      (nvim-treesitter.withPlugins (plugins: with plugins;
+        [
+          allGrammars
+          tree-sitter-nu
+        ]
+      ))
       oil-nvim
       presence-nvim
       rose-pine
