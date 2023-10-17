@@ -35,6 +35,8 @@
       rustc
       cargo
       rust-analyzer
+      nodePackages.typescript-language-server
+      nodePackages.prettier
 
       (eww.override {withWayland = true;})
       discord
