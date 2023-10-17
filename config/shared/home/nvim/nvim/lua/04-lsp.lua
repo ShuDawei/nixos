@@ -15,6 +15,7 @@ lib.setupls("lua_ls", {
         telemetry = { enable = false },
     }
 })
+lib.setupls("tsserver")
 lib.setupls("nixd")
 
 local cmp = require("cmp")
