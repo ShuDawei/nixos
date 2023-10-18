@@ -67,7 +67,10 @@ in {
     xkbVariant = "";
     videoDrivers = ["nvidia"];
     displayManager.lightdm.enable = false;
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+        enable = true;
+        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}";
+    };
     displayManager.sessionPackages = [hyprland-pkg];
   };
 
