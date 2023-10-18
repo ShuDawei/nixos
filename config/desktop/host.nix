@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-ext,
+  inputs,
   config,
   ...
 }: let
@@ -25,6 +26,7 @@ in {
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      theme = inputs.grub-theme + "/src/catppuccin-mocha-grub-theme";
     };
     efi.canTouchEfiVariables = true;
   };

@@ -27,6 +27,10 @@
       url = "github:nix-community/nixd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    grub-theme = {
+        url = "github:catppuccin/grub";
+        flake = false;
+    };
   };
 
   outputs = {
