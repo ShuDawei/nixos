@@ -69,7 +69,7 @@ in {
     displayManager.lightdm.enable = false;
     displayManager.sddm = {
         enable = true;
-        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}";
+        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
     };
     displayManager.sessionPackages = [hyprland-pkg];
   };
