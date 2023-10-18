@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation {
     name = "catppuccin-sddm-theme";
-    src = pkgs.fetchFromGithub {
+    src = pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "sddm";
         rev = "7fc67d1027cdb7f4d833c5d23a8c34a0029b0661";
