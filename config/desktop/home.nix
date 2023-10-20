@@ -2,6 +2,7 @@
   pkgs,
   pkgs-ext,
   pkgs-stable,
+  inputs,
   ...
 }: {
   imports = [
@@ -32,7 +33,7 @@
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
-      (import ../shared/drv/theseus_cli.nix pkgs)
+      (import ../shared/drv/theseus_cli.nix inputs.nixpkgs.legacyPackages.${pkgs.system})
 
       rustc
       cargo
