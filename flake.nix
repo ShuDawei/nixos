@@ -39,10 +39,7 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    pkgs = nixpkgs.legacyPackages.${system};
     pkgs-ext = {
       inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
     };
@@ -54,6 +51,10 @@
           inherit pkgs inputs pkgs-ext;
         };
         modules = [
+        {
+
+    nixpkgs.config.allowUnfree = true;
+        }
           ./config/desktop/host.nix
           pkgs-ext.home-manager.nixosModules.home-manager
           {
