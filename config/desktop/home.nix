@@ -3,7 +3,10 @@
   pkgs-ext,
   ...
 }: {
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
+    };
   imports = [
     ../shared/home/alacritty
     ../shared/home/btop
