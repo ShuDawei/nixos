@@ -1,4 +1,6 @@
-pkgs:
+let
+pkgs = import <nixpkgs> {};
+in
 
 pkgs.rustPlatform.buildRustPackage rec {
     pname = "theseus_cli";
