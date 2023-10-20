@@ -51,10 +51,6 @@
           inherit pkgs inputs pkgs-ext;
         };
         modules = [
-        {
-
-    nixpkgs.config.allowUnfree = true;
-        }
           ./config/desktop/host.nix
           pkgs-ext.home-manager.nixosModules.home-manager
           {
