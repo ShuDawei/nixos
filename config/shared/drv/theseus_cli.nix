@@ -1,9 +1,9 @@
-{rustPlatform, fetchFromGitHub, openssl, pkg-config}:
+{pkgs ? import <nixpkgs> {}}:
 
-rustPlatform.buildRustPackage rec {
+pkgs.rustPlatform.buildRustPackage rec {
     pname = "theseus_cli";
     version = "0.5.4";
-    src = fetchFromGitHub {
+    src = pkgs.fetchFromGitHub {
         owner = "modrinth";
         repo = "theseus";
         rev = "1e8852b54007f8739d94c4593aa369ac512b30fc";
@@ -15,7 +15,7 @@ rustPlatform.buildRustPackage rec {
             "tauri-plugin-single-instance-0.0.0" = "sha256-G4h2OXKPpZMmradutdUWxGG5axL9XMz2ACAe8AQ40eg=";
         };
     };
-    buildInputs = [openssl];
-    nativeBuildInputs = [pkg-config];
+    buildInputs = [pkgs.openssl];
+    nativeBuildInputs = [pkgs.pkg-config];
     buildAndTestSubdir = "theseus_cli";
 }
