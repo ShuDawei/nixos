@@ -3,6 +3,7 @@
   pkgs-ext,
   ...
 }: {
+    nixpkgs.config.allowUnfree = true;
   imports = [
     ../shared/home/alacritty
     ../shared/home/btop
