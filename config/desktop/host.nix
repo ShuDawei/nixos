@@ -10,7 +10,6 @@
     enableNvidiaPatches = true;
   };
 in {
-    nixpkgs.config.allowUnfree = true;
   imports = [
     ./hdw.nix
   ];
