@@ -2,7 +2,8 @@
   description = ".nixos";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,12 +37,16 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+    };
+    pkgs-stable = import nixpkgs-stable {
+        inherit system;
     };
     pkgs-ext = {
       inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
@@ -51,7 +56,7 @@
       desktop = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
-          inherit pkgs inputs pkgs-ext;
+          inherit pkgs pkgs-stable inputs pkgs-ext;
         };
         modules = [
           ./config/desktop/host.nix
