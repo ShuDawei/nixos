@@ -30,7 +30,7 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
         ripgrep
-        openjdk8_headless
+        openjdk8
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
