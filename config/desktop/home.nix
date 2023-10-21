@@ -29,6 +29,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+        openjdk8_headless
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
