@@ -1,7 +1,7 @@
 pkgs:
 
 pkgs.rustPlatform.buildRustPackage rec {
-    pname = "theseus";
+    pname = "theseus_cli";
     version = "0.5.4";
     src = pkgs.fetchFromGitHub {
         owner = "modrinth";
