@@ -18,4 +18,5 @@ pkgs.rustPlatform.buildRustPackage rec {
     buildInputs = [pkgs.openssl];
     nativeBuildInputs = [pkgs.pkg-config];
     buildAndTestSubdir = "theseus_cli";
+    buildType = "debug";
 }
