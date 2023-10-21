@@ -29,6 +29,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+        ripgrep
         openjdk8_headless
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
