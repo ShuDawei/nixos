@@ -23,6 +23,9 @@
     #./cfg/wireplumber.nix
   ];
 
+  home.file.".local/java/jdk8" = pkgs.jdk8;
+  home.file.".local/java/jdk17" = pkgs.jdk17;
+
   programs.obs-studio.enable = true;
 
   home = {
@@ -30,8 +33,6 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
         ripgrep
-        jdk8_headless
-        jdk17_headless
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
