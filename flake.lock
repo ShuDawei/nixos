@@ -33,6 +33,26 @@
         "type": "github"
       }
     },
+    "getchoo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1697581699,
+        "narHash": "sha256-j+aKOVGCKForqDLjP+c5mSzmh850l4ZlMZi0SmshoMY=",
+        "owner": "getchoo",
+        "repo": "nix-exprs",
+        "rev": "c2f54f3ca8c233290343f16e134dbd478838b1b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "getchoo",
+        "repo": "nix-exprs",
+        "type": "github"
+      }
+    },
     "grub-theme": {
       "flake": false,
       "locked": {
@@ -260,6 +280,7 @@
     },
     "root": {
       "inputs": {
+        "getchoo": "getchoo",
         "grub-theme": "grub-theme",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
