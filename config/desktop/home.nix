@@ -32,6 +32,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+        prismlauncher
         ripgrep
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
