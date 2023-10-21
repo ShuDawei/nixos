@@ -16,6 +16,7 @@ in {
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
+    trusted-users = ["root" "shudawei"];
   };
 
   boot.extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
