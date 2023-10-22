@@ -1,0 +1,10 @@
+/home/shudawei/git/nixos/config/shared/drv/theseus/target/debug/deps/tauri_build-a13b92778c15d385.rmeta: /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/lib.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/allowlist.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/static_vcruntime.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/window-app-manifest.xml
+
+/home/shudawei/git/nixos/config/shared/drv/theseus/target/debug/deps/libtauri_build-a13b92778c15d385.rlib: /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/lib.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/allowlist.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/static_vcruntime.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/window-app-manifest.xml
+
+/home/shudawei/git/nixos/config/shared/drv/theseus/target/debug/deps/tauri_build-a13b92778c15d385.d: /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/lib.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/allowlist.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/static_vcruntime.rs /home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/window-app-manifest.xml
+
+/home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/lib.rs:
+/home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/allowlist.rs:
+/home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/static_vcruntime.rs:
+/home/shudawei/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tauri-build-1.4.0/src/window-app-manifest.xml:
