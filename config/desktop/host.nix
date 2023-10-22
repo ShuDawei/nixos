@@ -12,8 +12,6 @@
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
-    substituters = ["https://cache.nixos.org" "https://cache.garnix.io"];
-    trusted-public-keys = ["cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
   };
 
   boot.extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
@@ -48,9 +46,6 @@
     enableNvidiaPatches = true;
     xwayland.enable = true;
   };
-  environment.systemPackages = with pkgs; [
-    inputs.getchoo.packages.${pkgs.system}.treefetch
-  ];
   programs.dconf.enable = true;
   programs.xwayland.enable = true;
   security.polkit.enable = true;
