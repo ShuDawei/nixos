@@ -49,7 +49,7 @@
     xwayland.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    inputs.getchoo.packages.${pkgs.system}.modrinth-app
+    inputs.getchoo.packages.${pkgs.system}.treefetch
   ];
   programs.dconf.enable = true;
   programs.xwayland.enable = true;
