@@ -62,6 +62,7 @@ pub async fn get(
 ) -> crate::Result<Option<Profile>> {
     let state = State::get().await?;
     let profiles = state.profiles.read().await;
+    dbg!(&path);
     dbg!(&profiles);
     let mut profile = profiles.0.get(path).cloned();
     dbg!(&profile);
