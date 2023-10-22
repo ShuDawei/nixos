@@ -64,9 +64,7 @@ pub fn parse_rule(
     let res = match rule {
         Rule {
             os: Some(ref os), ..
-        } => {
-            crate::util::platform::os_rule(os, java_version, minecraft_updated)
-        }
+        } => crate::util::platform::os_rule(os, java_version, minecraft_updated),
         Rule {
             features: Some(ref features),
             ..
@@ -176,8 +174,7 @@ pub async fn install_minecraft(
     }
 
     let state = State::get().await?;
-    let instance_path =
-        &io::canonicalize(&profile.get_profile_full_path().await?)?;
+    let instance_path = &io::canonicalize(&profile.get_profile_full_path().await?)?;
     let metadata = state.metadata.read().await;
 
     let version_index = metadata
@@ -219,9 +216,7 @@ pub async fn install_minecraft(
     let java_version = get_java_version_from_profile(profile, &version_info)
         .await?
         .ok_or_else(|| {
-            crate::ErrorKind::OtherError(
-                "Missing correct java installation".to_string(),
-            )
+            crate::ErrorKind::OtherError("Missing correct java installation".to_string())
         })?;
 
     // Test jre version
@@ -274,8 +269,7 @@ pub async fn install_minecraft(
                     server => "";
             }
 
-            emit_loading(&loading_bar, 0.0, Some("Running forge processors"))
-                .await?;
+            emit_loading(&loading_bar, 0.0, Some("Running forge processors")).await?;
             let total_length = processors.len();
 
             // Forge processors (90-100)
@@ -320,9 +314,7 @@ pub async fn install_minecraft(
                     .await
                     .map_err(|e| IOError::with_path(e, &java_version.path))
                     .map_err(|err| {
-                        crate::ErrorKind::LauncherError(format!(
-                            "Error running processor: {err}",
-                        ))
+                        crate::ErrorKind::LauncherError(format!("Error running processor: {err}",))
                     })?;
 
                 if !child.status.success() {
@@ -375,10 +367,9 @@ pub async fn launch_minecraft(
     if profile.install_stage == ProfileInstallStage::PackInstalling
         || profile.install_stage == ProfileInstallStage::Installing
     {
-        return Err(crate::ErrorKind::LauncherError(
-            "Profile is still installing".to_string(),
-        )
-        .into());
+        return Err(
+            crate::ErrorKind::LauncherError("Profile is still installing".to_string()).into(),
+        );
     }
 
     if profile.install_stage != ProfileInstallStage::Installed {
@@ -429,10 +420,9 @@ pub async fn launch_minecraft(
     let java_version = get_java_version_from_profile(profile, &version_info)
         .await?
         .ok_or_else(|| {
-            crate::ErrorKind::LauncherError(
-                "Missing correct java installation".to_string(),
-            )
+            crate::ErrorKind::LauncherError("Missing correct java installation".to_string())
         })?;
+    dbg!(&java_version);
 
     // Test jre version
     let java_version = jre::check_jre(java_version.path.clone().into())
@@ -443,6 +433,7 @@ pub async fn launch_minecraft(
                 java_version.path
             ))
         })?;
+    dbg!(&java_version);
 
     let client_path = state
         .directories
@@ -462,8 +453,7 @@ pub async fn launch_minecraft(
 
     // Check if profile has a running profile, and reject running the command if it does
     // Done late so a quick double call doesn't launch two instances
-    let existing_processes =
-        process::get_uuids_by_profile_path(profile.profile_id()).await?;
+    let existing_processes = process::get_uuids_by_profile_path(profile.profile_id()).await?;
     if let Some(uuid) = existing_processes.first() {
         return Err(crate::ErrorKind::LauncherError(format!(
             "Profile {} is already running at UUID: {uuid}",

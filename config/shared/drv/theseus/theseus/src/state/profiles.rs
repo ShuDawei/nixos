@@ -56,14 +56,12 @@ impl ProfilePathId {
         let path = path
             .strip_prefix(profiles_dir)
             .ok()
-            //.and_then(|p| p.file_name())
             .ok_or_else(|| {
                 crate::ErrorKind::FSError(format!(
                     "Path {path:?} does not correspond to a profile",
                     path = path
                 ))
             })?
-            .into();
         Ok(Self(path))
     }
 
