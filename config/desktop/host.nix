@@ -4,12 +4,8 @@
   inputs,
   config,
   ...
-}: let
-  hyprland-pkg = pkgs-ext.hyprland.packages.${pkgs.system}.default.override {
-    enableXWayland = true;
-    enableNvidiaPatches = true;
-  };
-in {
+}:
+{
   imports = [
     ./hdw.nix
   ];
@@ -100,7 +96,6 @@ in {
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [
-    pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default
     pkgs.xdg-desktop-portal-gtk
   ];
 
