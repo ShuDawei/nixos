@@ -61,8 +61,8 @@
     layout = "de";
     xkbVariant = "";
     videoDrivers = ["nvidia"];
-    displayManager.ly.enable = true;
-    #displayManager.lightdm.enable = false;
+    displayManager.job.execCmd = "exec ${pkgs.ly}/bin/ly";
+    displayManager.lightdm.enable = false;
     #displayManager.sddm = {
     #    enable = true;
     #    theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
