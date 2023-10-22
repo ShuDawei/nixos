@@ -12,7 +12,8 @@
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
-    substituters = ["https://cache.nixos.org" "https://cache.garnix.io"];
+    #substituters = ["https://cache.nixos.org" "https://cache.garnix.io"];
+    trusted-users = ["root" "shudawei"];
     trusted-public-keys = ["cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
   };
 
