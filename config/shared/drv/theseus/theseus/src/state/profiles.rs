@@ -53,7 +53,6 @@ impl ProfilePathId {
     pub async fn from_fs_path(path: PathBuf) -> crate::Result<Self> {
         let path: PathBuf = io::canonicalize(path)?;
         let profiles_dir = io::canonicalize(State::get().await?.directories.profiles_dir().await)?;
-        dbg!(&profiles_dir);
         let path = path
             .strip_prefix(profiles_dir)
             .ok()
@@ -63,7 +62,8 @@ impl ProfilePathId {
                     "Path {path:?} does not correspond to a profile",
                     path = path
                 ))
-            })?;
+            })?
+            .into();
         Ok(Self(path))
     }
 

@@ -1,5 +1,7 @@
 //! Profile management subcommand
-use crate::util::{confirm_async, prompt_async, select_async, table, table_path_display};
+use crate::util::{
+    confirm_async, prompt_async, select_async, table, table_path_display,
+};
 use daedalus::modded::LoaderVersion;
 use dunce::canonicalize;
 use eyre::{ensure, Result};
@@ -55,7 +57,11 @@ pub struct ProfileInit {
 }
 
 impl ProfileInit {
-    pub async fn run(&self, _args: &crate::Args, _largs: &ProfileCommand) -> Result<()> {
+    pub async fn run(
+        &self,
+        _args: &crate::Args,
+        _largs: &ProfileCommand,
+    ) -> Result<()> {
         // TODO: validate inputs from args early
         let state = State::get().await?;
         let metadata = state.metadata.read().await;
@@ -75,7 +81,12 @@ impl ProfileInit {
                 .is_some()
             {
                 warn!("You are trying to create a profile in a non-empty directory. If this is an instance from another launcher, please be sure to properly fill the profile.json fields!");
-                if !confirm_async(String::from("Do you wish to continue"), false).await? {
+                if !confirm_async(
+                    String::from("Do you wish to continue"),
+                    false,
+                )
+                .await?
+                {
                     eyre::bail!("Aborted!");
                 }
             }
@@ -93,7 +104,11 @@ impl ProfileInit {
             None => {
                 let default = self.path.file_name().unwrap().to_string_lossy();
 
-                prompt_async(String::from("Instance name"), Some(default.into_owned())).await?
+                prompt_async(
+                    String::from("Instance name"),
+                    Some(default.into_owned()),
+                )
+                .await?
             }
         };
 
@@ -102,15 +117,22 @@ impl ProfileInit {
             None => {
                 let default = &metadata.minecraft.latest.release;
 
-                prompt_async(String::from("Game version"), Some(default.clone())).await?
+                prompt_async(
+                    String::from("Game version"),
+                    Some(default.clone()),
+                )
+                .await?
             }
         };
 
         let loader = match &self.modloader {
             Some(loader) => *loader,
             None => {
-                let choice =
-                    select_async("Modloader".to_owned(), &["vanilla", "fabric", "forge"]).await?;
+                let choice = select_async(
+                    "Modloader".to_owned(),
+                    &["vanilla", "fabric", "forge"],
+                )
+                .await?;
 
                 match choice {
                     0 => ModLoader::Vanilla,
@@ -126,13 +148,13 @@ impl ProfileInit {
         let loader = if loader != ModLoader::Vanilla {
             let version = match &self.loader_version {
                 Some(version) => String::from(version),
-                None => {
-                    prompt_async(
-                        String::from("Modloader version (latest, stable, or a version ID)"),
-                        Some(String::from("latest")),
-                    )
-                    .await?
-                }
+                None => prompt_async(
+                    String::from(
+                        "Modloader version (latest, stable, or a version ID)",
+                    ),
+                    Some(String::from("latest")),
+                )
+                .await?,
             };
 
             let filter = |it: &LoaderVersion| match version.as_str() {
@@ -144,25 +166,20 @@ impl ProfileInit {
             let loader_data = match loader {
                 ModLoader::Forge => &metadata.forge,
                 ModLoader::Fabric => &metadata.fabric,
-                _ => eyre::bail!(
-                    "Could not get manifest for loader {loader}. This is a bug in the CLI!"
-                ),
+                _ => eyre::bail!("Could not get manifest for loader {loader}. This is a bug in the CLI!"),
             };
 
-            let loaders = &loader_data
-                .game_versions
+            let loaders = &loader_data.game_versions
                 .iter()
                 .find(|it| it.id == game_version)
-                .ok_or_else(|| {
-                    eyre::eyre!(
-                        "Modloader {loader} unsupported for Minecraft version {game_version}"
-                    )
-                })?
+                .ok_or_else(|| eyre::eyre!("Modloader {loader} unsupported for Minecraft version {game_version}"))?
                 .loaders;
 
             let loader_version =
                 loaders.iter().cloned().find(filter).ok_or_else(|| {
-                    eyre::eyre!("Invalid version {version} for modloader {loader}")
+                    eyre::eyre!(
+                        "Invalid version {version} for modloader {loader}"
+                    )
                 })?;
 
             Some((loader_version, loader))
@@ -183,7 +200,9 @@ impl ProfileInit {
         )
         .await?;
 
-        success!("Successfully created instance, it is now available to use with Theseus!");
+        success!(
+            "Successfully created instance, it is now available to use with Theseus!"
+        );
         Ok(())
     }
 }
@@ -212,7 +231,11 @@ impl<'a> From<&'a Profile> for ProfileRow<'a> {
             path: Path::new(&it.metadata.name),
             game_version: &it.metadata.game_version,
             loader: &it.metadata.loader,
-            loader_version: it.metadata.loader_version.as_ref().map_or("", |it| &it.id),
+            loader_version: it
+                .metadata
+                .loader_version
+                .as_ref()
+                .map_or("", |it| &it.id),
         }
     }
 }
@@ -230,12 +253,18 @@ impl<'a> From<&'a Path> for ProfileRow<'a> {
 }
 
 impl ProfileList {
-    pub async fn run(&self, _args: &crate::Args, _largs: &ProfileCommand) -> Result<()> {
+    pub async fn run(
+        &self,
+        _args: &crate::Args,
+        _largs: &ProfileCommand,
+    ) -> Result<()> {
         let profiles = profile::list(None).await?;
         let rows = profiles.values().map(ProfileRow::from);
 
-        let table = table(rows)
-            .with(tabled::Modify::new(tabled::Column(1..=1)).with(tabled::MaxWidth::wrapping(40)));
+        let table = table(rows).with(
+            tabled::Modify::new(tabled::Column(1..=1))
+                .with(tabled::MaxWidth::wrapping(40)),
+        );
         println!("{table}");
 
         Ok(())
@@ -252,8 +281,13 @@ pub struct ProfileRemove {
 }
 
 impl ProfileRemove {
-    pub async fn run(&self, _args: &crate::Args, _largs: &ProfileCommand) -> Result<()> {
-        let profile = ProfilePathId::from_fs_path(canonicalize(&self.profile)?).await?;
+    pub async fn run(
+        &self,
+        _args: &crate::Args,
+        _largs: &ProfileCommand,
+    ) -> Result<()> {
+        let profile =
+            ProfilePathId::from_fs_path(canonicalize(&self.profile)?).await?;
         info!("Removing profile {} from Theseus", self.profile.display());
 
         if confirm_async(String::from("Do you wish to continue"), true).await? {
@@ -282,26 +316,30 @@ pub struct ProfileRun {
 }
 
 impl ProfileRun {
-    pub async fn run(&self, _args: &crate::Args, _largs: &ProfileCommand) -> Result<()> {
+    pub async fn run(
+        &self,
+        _args: &crate::Args,
+        _largs: &ProfileCommand,
+    ) -> Result<()> {
         info!("Starting profile at path {}...", self.profile.display());
         let path = canonicalize(&self.profile)?;
-        dbg!(&path);
 
         let id = future::ready(self.user.ok_or(()))
             .or_else(|_| async move {
                 let state = State::get().await?;
                 let settings = state.settings.read().await;
 
-                settings.default_user.ok_or(eyre::eyre!(
-                    "Could not find any users, please add one using the `user add` command."
-                ))
+                settings.default_user
+                    .ok_or(eyre::eyre!(
+                        "Could not find any users, please add one using the `user add` command."
+                    ))
             })
             .await?;
         let credentials = auth::refresh(id).await?;
 
         let profile_path_id = ProfilePathId::from_fs_path(path).await?;
-        dbg!(&profile_path_id);
-        let proc_lock = profile::run_credentials(&profile_path_id, &credentials).await?;
+        let proc_lock =
+            profile::run_credentials(&profile_path_id, &credentials).await?;
         let mut proc = proc_lock.write().await;
         process::wait_for(&mut proc).await?;
 
