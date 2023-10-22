@@ -61,6 +61,7 @@
     layout = "de";
     xkbVariant = "";
     videoDrivers = ["nvidia"];
+    displayManager.ly.enable = true;
     #displayManager.lightdm.enable = false;
     #displayManager.sddm = {
     #    enable = true;
