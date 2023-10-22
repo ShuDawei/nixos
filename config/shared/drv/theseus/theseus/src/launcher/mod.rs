@@ -514,6 +514,7 @@ pub async fn launch_minecraft(
     command.env_remove("_JAVA_OPTIONS");
 
     command.envs(env_args);
+    dbg!(&command);
 
     // Overwrites the minecraft options.txt file with the settings from the profile
     // Uses 'a:b' syntax which is not quite yaml
