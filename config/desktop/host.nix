@@ -61,12 +61,12 @@
     layout = "de";
     xkbVariant = "";
     videoDrivers = ["nvidia"];
-    displayManager.job.execCmd = "exec ${pkgs.ly}/bin/ly";
+    #displayManager.job.execCmd = "exec ${pkgs.ly}/bin/ly";
     displayManager.lightdm.enable = false;
-    #displayManager.sddm = {
-    #    enable = true;
-    #    theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
-    #};
+    displayManager.sddm = {
+        enable = true;
+        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
+    };
     #displayManager.sessionPackages = [hyprland-pkg];
   };
 
