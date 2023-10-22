@@ -11,7 +11,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     #    sha256 = "1zykw5wnn3ilqxxahrggrxzzrgg1265338kxvhl8s7h7wicp7gll";
     #};
     cargoLock = {
-        lockFile = "${src}/Cargo.lock";
+        lockFile = ./theseus/Cargo.lock;
         outputHashes = {
             "tauri-plugin-single-instance-0.0.0" = "sha256-G4h2OXKPpZMmradutdUWxGG5axL9XMz2ACAe8AQ40eg=";
         };
