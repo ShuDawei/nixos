@@ -3,7 +3,7 @@ pkgs:
 pkgs.rustPlatform.buildRustPackage rec {
     pname = "theseus_cli";
     version = "0.5.4";
-    src = ./.;
+    src = ./theseus;
     #src = pkgs.fetchFromGitHub {
     #    owner = "modrinth";
     #    repo = "theseus";
@@ -11,7 +11,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     #    sha256 = "0blxpa2qhpmjr7xa7vi7wnjk842cj1286pn90gnak98rz06ax76d";
     #};
     cargoLock = {
-        lockFile = ./Cargo.lock;
+        lockFile = ./theseus/Cargo.lock;
         #lockFile = "${src}/Cargo.lock";
         outputHashes = {
             "tauri-plugin-single-instance-0.0.0" = "sha256-G4h2OXKPpZMmradutdUWxGG5axL9XMz2ACAe8AQ40eg=";
