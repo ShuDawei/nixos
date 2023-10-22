@@ -12,8 +12,7 @@
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
-    #substituters = ["https://cache.nixos.org" "https://cache.garnix.io"];
-    trusted-users = ["root" "shudawei"];
+    substituters = ["https://cache.nixos.org" "https://cache.garnix.io"];
     trusted-public-keys = ["cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
   };
 
@@ -50,7 +49,7 @@
     xwayland.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    ly
+    inputs.getchoo.packages.${pkgs.system}.modrinth-app
   ];
   programs.dconf.enable = true;
   programs.xwayland.enable = true;
