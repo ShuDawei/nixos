@@ -54,8 +54,8 @@ impl ProfilePathId {
         let path: PathBuf = io::canonicalize(path)?;
         let profiles_dir = io::canonicalize(State::get().await?.directories.profiles_dir().await)?;
         dbg!(&profiles_dir);
-        dbg!(&path.strip_prefix(profiles_dir.clone()));
-        path.strip_prefix(profiles_dir)
+        let path = path
+            .strip_prefix(profiles_dir)
             .ok()
             .and_then(|p| p.file_name())
             .ok_or_else(|| {
