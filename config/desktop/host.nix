@@ -44,15 +44,14 @@ in {
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
-  #  portalPackage = pkgs-ext.xdg-desktop-portal-hyprland.packages.${pkgs.system}.default;
-  #  enableNvidiaPatches = true;
-  #  xwayland.enable = true;
-  #};
-  environment.systemPackages = [
-    hyprland-pkg
+  programs.hyprland = {
+    enable = true;
+    package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
+    enableNvidiaPatches = true;
+    xwayland.enable = true;
+  };
+  environment.systemPackages = with pkgs; [
+    ly
   ];
   programs.dconf.enable = true;
   programs.xwayland.enable = true;
@@ -66,12 +65,12 @@ in {
     layout = "de";
     xkbVariant = "";
     videoDrivers = ["nvidia"];
-    displayManager.lightdm.enable = false;
-    displayManager.sddm = {
-        enable = true;
-        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
-    };
-    displayManager.sessionPackages = [hyprland-pkg];
+    #displayManager.lightdm.enable = false;
+    #displayManager.sddm = {
+    #    enable = true;
+    #    theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
+    #};
+    #displayManager.sessionPackages = [hyprland-pkg];
   };
 
   hardware = {
