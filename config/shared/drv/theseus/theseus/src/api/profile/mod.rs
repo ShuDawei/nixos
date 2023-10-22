@@ -1,12 +1,8 @@
 //! Theseus profile management interface
 
-use crate::event::emit::{
-    emit_loading, init_loading, loading_try_for_each_concurrent,
-};
+use crate::event::emit::{emit_loading, init_loading, loading_try_for_each_concurrent};
 use crate::event::LoadingBarType;
-use crate::pack::install_from::{
-    EnvType, PackDependency, PackFile, PackFileHash, PackFormat,
-};
+use crate::pack::install_from::{EnvType, PackDependency, PackFile, PackFileHash, PackFormat};
 use crate::prelude::{JavaVersion, ProfilePathId, ProjectPathId};
 use crate::state::{InnerProjectPathUnix, ProjectMetadata, SideType};
 
@@ -66,6 +62,7 @@ pub async fn get(
 ) -> crate::Result<Option<Profile>> {
     let state = State::get().await?;
     let profiles = state.profiles.read().await;
+    dbg!(&profiles.0);
     let mut profile = profiles.0.get(path).cloned();
 
     if clear_projects.unwrap_or(false) {
@@ -117,15 +114,16 @@ pub async fn get_mod_full_path(
     project_path: &ProjectPathId,
 ) -> crate::Result<PathBuf> {
     if get(profile_path, Some(true)).await?.is_some() {
-        let full_path = io::canonicalize(
-            project_path.get_full_path(profile_path.clone()).await?,
-        )?;
+        let full_path = io::canonicalize(project_path.get_full_path(profile_path.clone()).await?)?;
         return Ok(full_path);
     }
 
     Err(crate::ErrorKind::OtherError(format!(
         "Tried to get the full path of a nonexistent or unloaded project at path {}!",
-        project_path.get_full_path(profile_path.clone()).await?.display()
+        project_path
+            .get_full_path(profile_path.clone())
+            .await?
+            .display()
     ))
     .into())
 }
@@ -155,16 +153,12 @@ where
 
             Ok(())
         }
-        None => Err(crate::ErrorKind::UnmanagedProfileError(path.to_string())
-            .as_error()),
+        None => Err(crate::ErrorKind::UnmanagedProfileError(path.to_string()).as_error()),
     }
 }
 
 /// Edits a profile's icon
-pub async fn edit_icon(
-    path: &ProfilePathId,
-    icon_path: Option<&Path>,
-) -> crate::Result<()> {
+pub async fn edit_icon(path: &ProfilePathId, icon_path: Option<&Path>) -> crate::Result<()> {
     let state = State::get().await?;
 
     let res = if let Some(icon) = icon_path {
@@ -192,10 +186,7 @@ pub async fn edit_icon(
                 .await?;
                 Ok(())
             }
-            None => {
-                Err(crate::ErrorKind::UnmanagedProfileError(path.to_string())
-                    .as_error())
-            }
+            None => Err(crate::ErrorKind::UnmanagedProfileError(path.to_string()).as_error()),
         }
     } else {
         edit(path, |profile| {
@@ -214,9 +205,7 @@ pub async fn edit_icon(
 // Gets the optimal JRE key for the given profile, using Daedalus
 // Generally this would be used for profile_create, to get the optimal JRE key
 // this can be overwritten by the user a profile-by-profile basis
-pub async fn get_optimal_jre_key(
-    path: &ProfilePathId,
-) -> crate::Result<Option<JavaVersion>> {
+pub async fn get_optimal_jre_key(path: &ProfilePathId) -> crate::Result<Option<JavaVersion>> {
     let state = State::get().await?;
 
     if let Some(profile) = get(path, None).await? {
@@ -245,24 +234,18 @@ pub async fn get_optimal_jre_key(
         )
         .await?;
 
-        let version = crate::launcher::get_java_version_from_profile(
-            &profile,
-            &version_info,
-        )
-        .await?;
+        let version =
+            crate::launcher::get_java_version_from_profile(&profile, &version_info).await?;
 
         Ok(version)
     } else {
-        Err(crate::ErrorKind::UnmanagedProfileError(path.to_string())
-            .as_error())
+        Err(crate::ErrorKind::UnmanagedProfileError(path.to_string()).as_error())
     }
 }
 
 /// Get a copy of the profile set
 #[tracing::instrument]
-pub async fn list(
-    clear_projects: Option<bool>,
-) -> crate::Result<HashMap<ProfilePathId, Profile>> {
+pub async fn list(clear_projects: Option<bool>) -> crate::Result<HashMap<ProfilePathId, Profile>> {
     let state = State::get().await?;
     let profiles = state.profiles.read().await;
     Ok(profiles
@@ -285,8 +268,7 @@ pub async fn install(path: &ProfilePathId, force: bool) -> crate::Result<()> {
     if let Some(profile) = get(path, None).await? {
         crate::launcher::install_minecraft(&profile, None, force).await?;
     } else {
-        return Err(crate::ErrorKind::UnmanagedProfileError(path.to_string())
-            .as_error());
+        return Err(crate::ErrorKind::UnmanagedProfileError(path.to_string()).as_error());
     }
     State::sync().await?;
     Ok(())
@@ -338,9 +320,7 @@ pub async fn update_all_projects(
                 let map = map.clone();
 
                 async move {
-                    let new_path =
-                        update_project(profile_path, &project, Some(true))
-                            .await?;
+                    let new_path = update_project(profile_path, &project, Some(true)).await?;
 
                     map.write().await.insert(project, new_path);
 
@@ -362,10 +342,7 @@ pub async fn update_all_projects(
 
         Ok(Arc::try_unwrap(map).unwrap().into_inner())
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -427,15 +404,9 @@ pub async fn update_project(
             }
         }
 
-        Err(crate::ErrorKind::InputError(
-            "This project cannot be updated!".to_string(),
-        )
-        .as_error())
+        Err(crate::ErrorKind::InputError("This project cannot be updated!".to_string()).as_error())
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -458,10 +429,7 @@ pub async fn add_project_from_version(
         .await?;
         Ok(project_path)
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -500,10 +468,7 @@ pub async fn add_project_from_path(
 
         Ok(path)
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -529,10 +494,7 @@ pub async fn toggle_disable_project(
 
         Ok(res)
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -557,10 +519,7 @@ pub async fn remove_project(
 
         Ok(())
     } else {
-        Err(
-            crate::ErrorKind::UnmanagedProfileError(profile_path.to_string())
-                .as_error(),
-        )
+        Err(crate::ErrorKind::UnmanagedProfileError(profile_path.to_string()).as_error())
     }
 }
 
@@ -608,13 +567,11 @@ pub async fn export_mrpack(
 
     // Create mrpack json configuration file
     let version_id = version_id.unwrap_or("1.0.0".to_string());
-    let mut packfile =
-        create_mrpack_json(&profile, version_id, description).await?;
-    let included_candidates_set =
-        HashSet::<_>::from_iter(included_export_candidates.iter());
-    packfile.files.retain(|f| {
-        included_candidates_set.contains(&f.path.get_topmost_two_components())
-    });
+    let mut packfile = create_mrpack_json(&profile, version_id, description).await?;
+    let included_candidates_set = HashSet::<_>::from_iter(included_export_candidates.iter());
+    packfile
+        .files
+        .retain(|f| included_candidates_set.contains(&f.path.get_topmost_two_components()));
 
     // Build vec of all files in the folder
     let mut path_list = Vec::new();
@@ -640,8 +597,7 @@ pub async fn export_mrpack(
             .await?
             .get_inner_path_unix();
         if packfile.files.iter().any(|f| f.path == relative_path)
-            || !included_candidates_set
-                .contains(&relative_path.get_topmost_two_components())
+            || !included_candidates_set.contains(&relative_path.get_topmost_two_components())
         {
             continue;
         }
@@ -655,20 +611,15 @@ pub async fn export_mrpack(
             file.read_to_end(&mut data)
                 .await
                 .map_err(|e| IOError::with_path(e, &path))?;
-            let builder = ZipEntryBuilder::new(
-                format!("overrides/{relative_path}"),
-                Compression::Deflate,
-            );
+            let builder =
+                ZipEntryBuilder::new(format!("overrides/{relative_path}"), Compression::Deflate);
             writer.write_entry_whole(builder, &data).await?;
         }
     }
 
     // Add modrinth json to the zip
     let data = serde_json::to_vec_pretty(&packfile)?;
-    let builder = ZipEntryBuilder::new(
-        "modrinth.index.json".to_string(),
-        Compression::Deflate,
-    );
+    let builder = ZipEntryBuilder::new("modrinth.index.json".to_string(), Compression::Deflate);
     writer.write_entry_whole(builder, &data).await?;
 
     writer.close().await?;
@@ -716,9 +667,7 @@ pub async fn get_pack_export_candidates(
                 .map_err(|e| IOError::with_path(e, &profile_base_dir))?
             {
                 let path: PathBuf = entry.path();
-                if let Ok(project_path) =
-                    ProjectPathId::from_fs_path(&path).await
-                {
+                if let Ok(project_path) = ProjectPathId::from_fs_path(&path).await {
                     path_list.push(project_path.get_inner_path_unix());
                 }
             }
@@ -735,9 +684,7 @@ pub async fn get_pack_export_candidates(
 /// Run Minecraft using a profile and the default credentials, logged in credentials,
 /// failing with an error if no credentials are available
 #[tracing::instrument]
-pub async fn run(
-    path: &ProfilePathId,
-) -> crate::Result<Arc<RwLock<MinecraftChild>>> {
+pub async fn run(path: &ProfilePathId) -> crate::Result<Arc<RwLock<MinecraftChild>>> {
     let state = State::get().await?;
 
     // Get default account and refresh credentials (preferred way to log in)
@@ -774,8 +721,7 @@ pub async fn run_credentials(
         ))
     })?;
 
-    let pre_launch_hooks =
-        &profile.hooks.as_ref().unwrap_or(&settings.hooks).pre_launch;
+    let pre_launch_hooks = &profile.hooks.as_ref().unwrap_or(&settings.hooks).pre_launch;
     if let Some(hook) = pre_launch_hooks {
         // TODO: hook parameters
         let mut cmd = hook.split(' ');
@@ -869,8 +815,7 @@ pub async fn try_update_playtime(path: &ProfilePathId) -> crate::Result<()> {
 
     let res = if updated_recent_playtime > 0 {
         // Create update struct to send to Labrinth
-        let modrinth_pack_version_id =
-            profile.metadata.linked_data.and_then(|l| l.version_id);
+        let modrinth_pack_version_id = profile.metadata.linked_data.and_then(|l| l.version_id);
         let playtime_update_json = json!({
             "seconds": updated_recent_playtime,
             "loader": profile.metadata.loader.to_string(),
@@ -880,8 +825,7 @@ pub async fn try_update_playtime(path: &ProfilePathId) -> crate::Result<()> {
         // Copy this struct for every Modrinth project in the profile
         let mut hashmap: HashMap<String, serde_json::Value> = HashMap::new();
         for (_, project) in profile.projects {
-            if let ProjectMetadata::Modrinth { version, .. } = project.metadata
-            {
+            if let ProjectMetadata::Modrinth { version, .. } = project.metadata {
                 hashmap.insert(version.id, playtime_update_json.clone());
             }
         }
@@ -940,10 +884,7 @@ pub async fn create_mrpack_json(
         }
         (crate::prelude::ModLoader::Vanilla, _) => None,
         _ => {
-            return Err(crate::ErrorKind::OtherError(
-                "Loader version mismatch".to_string(),
-            )
-            .into())
+            return Err(crate::ErrorKind::OtherError("Loader version mismatch".to_string()).into())
         }
     };
     dependencies.insert(
@@ -966,10 +907,7 @@ pub async fn create_mrpack_json(
 
             // Only Modrinth projects have a modrinth metadata field for the modrinth.json
             Some(Ok(match project.metadata {
-                crate::prelude::ProjectMetadata::Modrinth {
-                    ref version,
-                    ..
-                } => {
+                crate::prelude::ProjectMetadata::Modrinth { ref version, .. } => {
                     let mut env = HashMap::new();
                     // TODO: envtype should be a controllable option (in general or at least .mrpack exporting)
                     // For now, assume required.
@@ -978,14 +916,12 @@ pub async fn create_mrpack_json(
                     env.insert(EnvType::Client, SideType::Required);
                     env.insert(EnvType::Server, SideType::Required);
 
-                    let primary_file = if let Some(primary_file) =
-                        version.files.first()
-                    {
+                    let primary_file = if let Some(primary_file) = version.files.first() {
                         primary_file
                     } else {
-                        return Some(Err(crate::ErrorKind::OtherError(
-                            format!("No primary file found for mod at: {path}"),
-                        )));
+                        return Some(Err(crate::ErrorKind::OtherError(format!(
+                            "No primary file found for mod at: {path}"
+                        ))));
                     };
 
                     let file_size = primary_file.size;
@@ -1006,9 +942,7 @@ pub async fn create_mrpack_json(
                     }
                 }
                 // Inferred files are skipped for the modrinth.json
-                crate::prelude::ProjectMetadata::Inferred { .. } => {
-                    return None
-                }
+                crate::prelude::ProjectMetadata::Inferred { .. } => return None,
                 // Unknown projects are skipped for the modrinth.json
                 crate::prelude::ProjectMetadata::Unknown => return None,
             }))
@@ -1044,9 +978,7 @@ fn sanitize_loader_version_string(s: &str, loader: PackDependency) -> &str {
             }
         }
         // For quilt, etc we take the whole thing, as it functions like: 0.20.0-beta.11 (and should not be split here)
-        PackDependency::QuiltLoader
-        | PackDependency::FabricLoader
-        | PackDependency::Minecraft => s,
+        PackDependency::QuiltLoader | PackDependency::FabricLoader | PackDependency::Minecraft => s,
     }
 }
 
