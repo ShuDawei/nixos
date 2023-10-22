@@ -104,7 +104,8 @@ pub struct State {
 
 impl State {
     /// Get the current launcher state, initializing it if needed
-    pub async fn get() -> crate::Result<Arc<tokio::sync::RwLockReadGuard<'static, Self>>> {
+    pub async fn get(
+    ) -> crate::Result<Arc<tokio::sync::RwLockReadGuard<'static, Self>>> {
         Ok(Arc::new(
             LAUNCHER_STATE
                 .get_or_try_init(Self::initialize_state)
@@ -117,7 +118,8 @@ impl State {
     /// Get the current launcher state, initializing it if needed
     /// Takes writing control of the state, blocking all other uses of it
     /// Only used for state change such as changing the config directory
-    pub async fn get_write() -> crate::Result<tokio::sync::RwLockWriteGuard<'static, Self>> {
+    pub async fn get_write(
+    ) -> crate::Result<tokio::sync::RwLockWriteGuard<'static, Self>> {
         Ok(LAUNCHER_STATE
             .get_or_try_init(Self::initialize_state)
             .await?
@@ -132,11 +134,17 @@ impl State {
     #[tracing::instrument]
     #[theseus_macros::debug_pin]
     async fn initialize_state() -> crate::Result<RwLock<State>> {
-        let loading_bar =
-            init_loading_unsafe(LoadingBarType::StateInit, 100.0, "Initializing launcher").await?;
+        let loading_bar = init_loading_unsafe(
+            LoadingBarType::StateInit,
+            100.0,
+            "Initializing launcher",
+        )
+        .await?;
 
         // Settings
-        let settings = Settings::init(&DirectoryInfo::get_initial_settings_file()?).await?;
+        let settings =
+            Settings::init(&DirectoryInfo::get_initial_settings_file()?)
+                .await?;
 
         let directories = DirectoryInfo::init(&settings)?;
 
@@ -147,12 +155,15 @@ impl State {
         let fetch_semaphore = FetchSemaphore(RwLock::new(Semaphore::new(
             settings.max_concurrent_downloads,
         )));
-        let io_semaphore = IoSemaphore(RwLock::new(Semaphore::new(settings.max_concurrent_writes)));
+        let io_semaphore = IoSemaphore(RwLock::new(Semaphore::new(
+            settings.max_concurrent_writes,
+        )));
         emit_loading(&loading_bar, 10.0, None).await?;
 
         let is_offline = !fetch::check_internet(3).await;
 
-        let metadata_fut = Metadata::init(&directories, !is_offline, &io_semaphore);
+        let metadata_fut =
+            Metadata::init(&directories, !is_offline, &io_semaphore);
         let profiles_fut = Profiles::init(&directories, &mut file_watcher);
         let tags_fut = Tags::init(
             &directories,
@@ -194,9 +205,13 @@ impl State {
             offline: RwLock::new(is_offline),
             directories,
             fetch_semaphore,
-            fetch_semaphore_max: RwLock::new(settings.max_concurrent_downloads as u32),
+            fetch_semaphore_max: RwLock::new(
+                settings.max_concurrent_downloads as u32,
+            ),
             io_semaphore,
-            io_semaphore_max: RwLock::new(settings.max_concurrent_writes as u32),
+            io_semaphore_max: RwLock::new(
+                settings.max_concurrent_writes as u32,
+            ),
             metadata: RwLock::new(metadata),
             settings: RwLock::new(settings),
             profiles: RwLock::new(profiles),
@@ -367,29 +382,38 @@ pub async fn init_watcher() -> crate::Result<Debouncer<RecommendedWatcher>> {
                         let subfile = components_iterator.next().is_some();
 
                         // At this point, new_path is the path to the profile, and subfile is whether it's a subfile of the profile or not
-                        let profile_path_id = ProfilePathId::new(PathBuf::from(
-                            new_path.file_name().unwrap_or_default(),
-                        ));
+                        let profile_path_id =
+                            ProfilePathId::new(PathBuf::from(
+                                new_path.file_name().unwrap_or_default(),
+                            ));
 
                         if e.path
                             .components()
                             .any(|x| x.as_os_str() == "crash-reports")
-                            && e.path.extension().map(|x| x == "txt").unwrap_or(false)
+                            && e.path
+                                .extension()
+                                .map(|x| x == "txt")
+                                .unwrap_or(false)
                         {
                             Profile::crash_task(profile_path_id);
                         } else if !visited_paths.contains(&new_path) {
                             if subfile {
-                                Profile::sync_projects_task(profile_path_id, false);
+                                Profile::sync_projects_task(
+                                    profile_path_id,
+                                    false,
+                                );
                                 visited_paths.push(new_path);
                             } else {
-                                Profiles::sync_available_profiles_task(profile_path_id);
+                                Profiles::sync_available_profiles_task(
+                                    profile_path_id,
+                                );
                             }
                         }
                     });
                 }
-                Err(errors) => errors
-                    .iter()
-                    .for_each(|err| tracing::warn!("Unable to watch file: {err}")),
+                Err(errors) => errors.iter().for_each(|err| {
+                    tracing::warn!("Unable to watch file: {err}")
+                }),
             }
         }
     });
