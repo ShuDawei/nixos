@@ -62,6 +62,7 @@ impl ProfilePathId {
                     path = path
                 ))
             })?
+            .into();
         Ok(Self(path))
     }
 
