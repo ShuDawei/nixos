@@ -3,12 +3,13 @@ pkgs:
 pkgs.rustPlatform.buildRustPackage rec {
     pname = "theseus_cli";
     version = "0.5.4";
-    src = pkgs.fetchFromGitHub {
-        owner = "modrinth";
-        repo = "theseus";
-        rev = "1e8852b54007f8739d94c4593aa369ac512b30fc";
-        sha256 = "1zykw5wnn3ilqxxahrggrxzzrgg1265338kxvhl8s7h7wicp7gll";
-    };
+    src = ./theseus;
+    #src = pkgs.fetchFromGitHub {
+    #    owner = "modrinth";
+    #    repo = "theseus";
+    #    rev = "1e8852b54007f8739d94c4593aa369ac512b30fc";
+    #    sha256 = "1zykw5wnn3ilqxxahrggrxzzrgg1265338kxvhl8s7h7wicp7gll";
+    #};
     cargoLock = {
         lockFile = "${src}/Cargo.lock";
         outputHashes = {
