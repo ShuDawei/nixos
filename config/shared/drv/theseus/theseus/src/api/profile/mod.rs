@@ -714,6 +714,7 @@ pub async fn run_credentials(
 ) -> crate::Result<Arc<RwLock<MinecraftChild>>> {
     let state = State::get().await?;
     let settings = state.settings.read().await;
+    dbg!(&path);
     let profile = get(path, None).await?.ok_or_else(|| {
         crate::ErrorKind::OtherError(format!(
             "Tried to run a nonexistent or unloaded profile at path {}!",
