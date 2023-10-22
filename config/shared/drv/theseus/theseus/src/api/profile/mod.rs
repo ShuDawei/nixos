@@ -61,7 +61,6 @@ pub async fn get(
     clear_projects: Option<bool>,
 ) -> crate::Result<Option<Profile>> {
     let state = State::get().await?;
-    dbg!(&state);
     let profiles = state.profiles.read().await;
     dbg!(&profiles);
     let mut profile = profiles.0.get(path).cloned();

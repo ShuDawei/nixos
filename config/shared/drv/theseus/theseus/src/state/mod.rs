@@ -58,7 +58,6 @@ pub use self::mr_auth::*;
 // Global state
 // RwLock on state only has concurrent reads, except for config dir change which takes control of the State
 static LAUNCHER_STATE: OnceCell<RwLock<State>> = OnceCell::const_new();
-#[derive(Debug)]
 pub struct State {
     /// Whether or not the launcher is currently operating in 'offline mode'
     pub offline: RwLock<bool>,
