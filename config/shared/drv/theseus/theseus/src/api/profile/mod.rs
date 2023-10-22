@@ -64,7 +64,8 @@ pub async fn get(
     let profiles = state.profiles.read().await;
     dbg!(&path);
     dbg!(&profiles);
-    let mut profile = profiles.0.get(path).cloned();
+    // let mut profile = profiles.0.get(path).cloned();
+    let mut profile = profiles.0.get(&ProfilePathId("test".into()));
     dbg!(&profile);
 
     if clear_projects.unwrap_or(false) {
