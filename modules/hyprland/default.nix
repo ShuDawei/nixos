@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, inputs, lib, system, ... }:
 let
   cfg = config.cfg.hyprland;
 in
@@ -16,6 +16,11 @@ in
   };
 
   config = {
+    home.packages = [
+      hyprpaper
+      hyprpicker
+      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    ];
     wayland.windowManager.hyprland = {
       enable = true;
       enableNvidiaPatches = cfg.nvidia-patches.enable;

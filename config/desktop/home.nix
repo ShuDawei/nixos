@@ -73,7 +73,6 @@
       (eww.override { withWayland = true; })
       discord
       bemenu
-      hyprpaper
       freshfetch
       wl-clipboard
       lua-language-server
@@ -81,9 +80,6 @@
       lm_sensors
       gcc
       alejandra
-
-      hyprpicker
-      pkgs-ext.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
   };
 
