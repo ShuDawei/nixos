@@ -11,7 +11,7 @@ in
       default = [ ];
     };
     workspaces = lib.mkOption {
-      type = lib.types.listOf lib.types.listOf lib.types.int;
+      type = lib.types.listOf (lib.types.listOf lib.types.int);
       default = [ ];
     };
   };
