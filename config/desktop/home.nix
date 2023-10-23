@@ -33,6 +33,7 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
     #inputs.getchoo.packages.${pkgs.system}.modrinth-app
+        rnix-lsp
         prismlauncher
         ripgrep
       ladspaPlugins
