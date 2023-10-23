@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.modules.hyprland;
+  cfg = config.cfg.hyprland;
 in
 {
   options.cfg.hyprland = {
