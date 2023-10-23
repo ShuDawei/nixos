@@ -25,7 +25,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.file."test".text = ''
-      ${map (monitor: "${monitor.name} ${monitor.res} ${monitor.xy}") cfg.monitors}
+      ${lib.concatStrings (map (monitor: "${monitor.name} ${monitor.res} ${monitor.xy}") cfg.monitors)}
     '';
   };
 }
