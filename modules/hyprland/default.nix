@@ -1,4 +1,4 @@
-{ config, inputs, lib, system, ... }:
+{ config, inputs, lib, pkgs, system, ... }:
 let
   cfg = config.cfg.hyprland;
 in
@@ -17,8 +17,8 @@ in
 
   config = {
     home.packages = [
-      hyprpaper
-      hyprpicker
+      pkgs.hyprpaper
+      pkgs.hyprpicker
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
     wayland.windowManager.hyprland = {
