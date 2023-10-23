@@ -23,8 +23,7 @@
     #./cfg/wireplumber.nix
   ];
 
-  modules.hyprland = {
-    enable = true;
+  cfg.hyprland = {
     nvidia-patches.enable = true;
     monitors = [
       "DP-1,1920x1080@240,0x0,1,bitdepth,10"

@@ -3,8 +3,7 @@ let
   cfg = config.modules.hyprland;
 in
 {
-  options.modules.hyprland = {
-    enable = lib.mkEnableOption "hyprland";
+  options.cfg.hyprland = {
     nvidia-patches.enable = lib.mkEnableOption "enable nvidia patches";
     monitors = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -16,7 +15,7 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = {
     wayland.windowManager.hyprland = {
       enable = true;
       enableNvidiaPatches = cfg.nvidia-patches.enable;
