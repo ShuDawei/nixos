@@ -15,7 +15,7 @@ in
             type = lib.types.str;
           };
           xy = lib.mkOption {
-            type = lib.type.str;
+            type = lib.types.str;
           };
         };
       });
