@@ -1,5 +1,7 @@
-{ inputs, pkgs, lib, ... }:
+{ ... }:
 
 {
-  options = { };
+  imports = [
+    ./hyprland
+  ];
 }
