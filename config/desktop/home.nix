@@ -25,20 +25,10 @@
 
   modules.hyprland = {
     enable = true;
-    enable-nvidia-patches = true;
+    nvidia-patches.enable = true;
     monitors = [
-      {
-        name = "DP-1";
-        res = "1920x1080@240";
-        pos = "0x0";
-        ext = "bitdepth,10";
-      }
-      {
-        name = "HDMI-A-1";
-        res = "1920x1080@60";
-        pos = "1920x0";
-        ext = "bitdepth,10";
-      }
+      "DP-1,1920x1080@240,0x0,bitdepth,10"
+      "HDMI-A-1,1920x1080@60,1920x0,bitdepth,10"
     ];
   };
 
