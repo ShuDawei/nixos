@@ -75,9 +75,6 @@
       wl-clipboard
       lua-language-server
       socat
-      lm_sensors
-      gcc
-      alejandra
     ];
   };
 
