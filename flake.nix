@@ -24,10 +24,6 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixd = {
-      url = "github:nix-community/nixd";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     grub-theme = {
         url = "github:catppuccin/grub";
         flake = false;

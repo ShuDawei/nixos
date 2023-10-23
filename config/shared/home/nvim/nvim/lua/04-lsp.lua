@@ -16,7 +16,7 @@ lib.setupls("lua_ls", {
     }
 })
 lib.setupls("tsserver")
-lib.setupls("nixd")
+lib.setupls("rnix")
 
 local cmp = require("cmp")
 cmp.setup({
