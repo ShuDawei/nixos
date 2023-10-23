@@ -49,7 +49,7 @@
         inherit system;
     };
     pkgs-ext = {
-      inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib nixd;
+      inherit (inputs) home-manager neovim hyprland xdg-desktop-portal-hyprland hyprland-contrib;
     };
   in {
     nixosConfigurations = {
