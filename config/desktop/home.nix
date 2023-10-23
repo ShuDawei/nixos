@@ -56,7 +56,6 @@
       freshfetch
       wl-clipboard
       lua-language-server
-      pkgs-ext.nixd.packages.${pkgs.system}.nixd
       socat
       lm_sensors
       gcc
