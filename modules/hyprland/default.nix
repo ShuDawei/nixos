@@ -33,7 +33,7 @@ in
       enableNvidiaPatches = cfg.enable-nvidia-patches;
       xwayland.enable = true;
       settings = {
-        monitor = map (monitor: "${monitor.name},${monitor.res},${monitor.pos},1,${monitor.ext}");
+        monitor = map (monitor: "${monitor.name},${monitor.res},${monitor.pos},1,${monitor.ext}") cfg.monitors;
       };
       extraConfig = import ../../config/shared/home/hyprland/conf.nix;
     };
