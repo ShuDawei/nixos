@@ -1,5 +1,7 @@
-{ lib, ... }:
-
+{ config, lib, ... }:
+let
+  cfg = config.modules.hyprland;
+in
 {
   options.modules.hyprland = {
     enable = lib.mkEnableOption "hyprland";
@@ -19,5 +21,11 @@
       });
       default = [ ];
     };
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.file."test".text = ''
+      ${toString cfg.monitors}
+    '';
   };
 }
