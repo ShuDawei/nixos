@@ -5,14 +5,8 @@ in
 {
   options.cfg.hyprland = {
     nvidia-patches.enable = lib.mkEnableOption "enable nvidia patches";
-    monitors = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [ ];
-    };
-    workspaces = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [ ];
-    };
+    monitors = lib.mkOption { type = lib.types.listOf lib.types.str; };
+    workspaces = lib.mkOption { type = lib.types.listOf lib.types.str; };
   };
 
   config = {
