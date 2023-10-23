@@ -14,7 +14,7 @@
     ../shared/home/gh
     ../shared/home/git
     ../shared/home/gtk
-    ../shared/home/hyprland
+    #../shared/home/hyprland
     ../shared/home/nushell
     ../shared/home/nvim
     ../shared/home/pipewire
