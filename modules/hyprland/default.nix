@@ -18,7 +18,7 @@ in
       enableNvidiaPatches = cfg.nvidia-patches.enable;
       xwayland.enable = true;
       settings = {
-        monitor = lib.concatStrings cfg.monitors;
+        monitor = cfg.monitors;
       };
       extraConfig = import ../../config/shared/home/hyprland/conf.nix;
     };
