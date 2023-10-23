@@ -15,6 +15,11 @@ in
       pkgs.hyprpicker
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
+    home.file.".config/hypr/hyprpaper.conf".text = ''
+      splash = true;
+      preload = ~/Downloads/rose_pine_noiseline.png
+      wallpaper = , ~/Downloads/rose_pine_noiseline.png
+    '';
     wayland.windowManager.hyprland = {
       enable = true;
       enableNvidiaPatches = cfg.nvidia-patches.enable;
