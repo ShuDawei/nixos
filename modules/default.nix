@@ -1,0 +1,5 @@
+{ inputs, pkgs, lib, ... }:
+
+{
+  options = { };
+}
