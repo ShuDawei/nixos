@@ -11,7 +11,7 @@ in
       default = [ ];
     };
     workspaces = lib.mkOption {
-      type = lib.types.listOf (lib.types.listOf lib.types.int);
+      type = lib.types.listOf lib.types.str;
       default = [ ];
     };
   };
@@ -23,7 +23,7 @@ in
       xwayland.enable = true;
       settings = {
         monitor = cfg.monitors;
-        workspace = map (workspaces: "${map (workspace: "${workspace}") workspaces}") cfg.workspaces;
+        workspace = cfg.workspaces;
       };
       extraConfig = import ../../config/shared/home/hyprland/conf.nix;
     };
