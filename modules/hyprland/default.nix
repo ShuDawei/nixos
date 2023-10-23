@@ -25,7 +25,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.file."test".text = ''
-      ${toString cfg.monitors}
+      ${map (monitor: "${monitor.name} ${monitor.res} ${monitor.xy}") cfg.monitors}
     '';
   };
 }
