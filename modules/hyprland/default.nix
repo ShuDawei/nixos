@@ -25,6 +25,11 @@ in
       enableNvidiaPatches = cfg.nvidia-patches.enable;
       xwayland.enable = true;
       settings = {
+        env = [
+          "EDITOR,nvim"
+          "WLR_NO_HARDWARE_CURSORS,1"
+          "NIXOS_OZONE_WL,1"
+        ];
         monitor = cfg.monitors;
         workspace = cfg.workspaces;
         input = {
