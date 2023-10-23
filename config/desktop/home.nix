@@ -47,8 +47,6 @@
   home.file.".local/java/jdk8".source = pkgs.jdk8;
   home.file.".local/java/jdk17".source = pkgs.jdk17;
 
-  programs.obs-studio.enable = true;
-
   home = {
     username = "shudawei";
     homeDirectory = "/home/shudawei";
