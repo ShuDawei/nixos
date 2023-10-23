@@ -30,6 +30,10 @@
       "DP-1,1920x1080@240,0x0,1,bitdepth,10"
       "HDMI-A-1,1920x1080@60,1920x0,1,bitdepth,10"
     ];
+    workspaces = [
+      [ 0 1 2 3 4 5 6 7 ]
+      [ 8 9 10 ]
+    ];
   };
 
   home.file.".local/java/jdk8".source = pkgs.jdk8;
