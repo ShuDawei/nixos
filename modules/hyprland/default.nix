@@ -33,8 +33,8 @@ in
           gaps_out = 16;
           gaps_in = 8;
           border_size = 2;
-          col.active_border = "0xffebbcba 0xff31748f 45deg";
-          col.inactive_border = "0xff6e6a86";
+          "col.active_border" = "0xffebbcba 0xff31748f 45deg";
+          "col.inactive_border" = "0xff6e6a86";
           layout = "dwindle";
         };
         decoration = {
