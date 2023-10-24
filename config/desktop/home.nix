@@ -58,6 +58,7 @@
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
+      (callPackage ../shared/drv/theseus { })
 
       rustc
       cargo
