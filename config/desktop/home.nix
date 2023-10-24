@@ -51,14 +51,15 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      #inputs.getchoo.packages.${pkgs.system}.modrinth-app
+      (inputs.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (prev: {
+        patches = [ ./theseus.patch ];
+      }))
       rnix-lsp
       prismlauncher
       ripgrep
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
-      (callPackage ../shared/drv/theseus { })
 
       rustc
       cargo
