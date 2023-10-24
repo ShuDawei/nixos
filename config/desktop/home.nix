@@ -59,7 +59,7 @@
       (import ../shared/scripts/vol.nix pkgs)
       #pkgs-ext.neovim.packages.${pkgs.system}.neovim
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
-      (callPackage ../shared/drv/theseus.nix)
+      (callPackage ../shared/drv/theseus.nix { })
 
       rustc
       cargo
