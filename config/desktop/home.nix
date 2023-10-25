@@ -51,9 +51,6 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      (inputs.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (prev: {
-        patches = [ ./theseus.patch ];
-      }))
       rnix-lsp
       prismlauncher
       ripgrep

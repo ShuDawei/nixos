@@ -28,9 +28,6 @@
       url = "github:catppuccin/grub";
       flake = false;
     };
-    getchoo = {
-      url = "github:getchoo/nix-exprs/003c15c82ca1554e62966c520e811132b071555e";
-    };
   };
 
   outputs =
