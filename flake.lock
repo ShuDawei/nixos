@@ -20,17 +20,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1697918886,
-        "narHash": "sha256-h1ASH3wymh+HtdT5RRkrlznw9YIzs6vMgPyQnBmfHeo=",
-        "owner": "getchoo",
-        "repo": "nix-exprs",
-        "rev": "bf6384fc3002405e9c54a5a14447afc09941d27b",
-        "type": "github"
+        "lastModified": 1698316374,
+        "narHash": "sha256-PBDRdcJkKRd51dNo0OQOExJW1dlfGMNGa8Di96dgV1k=",
+        "ref": "refs/heads/main",
+        "rev": "522bd25017cdd03ffc84a7e1466e47dc8461465b",
+        "revCount": 174,
+        "type": "git",
+        "url": "file:///home/shudawei/git/getchoo.nix-exprs"
       },
       "original": {
-        "owner": "getchoo",
-        "repo": "nix-exprs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/shudawei/git/getchoo.nix-exprs"
       }
     },
     "grub-theme": {
