@@ -1,9 +1,8 @@
-{
-  pkgs,
-  pkgs-ext,
-  inputs,
-  config,
-  ...
+{ pkgs
+, pkgs-ext
+, inputs
+, config
+, ...
 }:
 {
   imports = [
@@ -11,11 +10,11 @@
   ];
 
   nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [ "nix-command" "flakes" ];
   };
 
-  boot.extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
-  boot.kernelModules = ["v4l2loopback"];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
   boot.loader = {
     grub = {
       enable = true;
@@ -37,12 +36,11 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   programs.hyprland = {
     enable = true;
-    package = pkgs-ext.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     xwayland.enable = true;
   };
@@ -57,12 +55,12 @@
     enable = true;
     layout = "de";
     xkbVariant = "";
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
     #displayManager.job.execCmd = "exec ${pkgs.ly}/bin/ly";
     displayManager.lightdm.enable = false;
     displayManager.sddm = {
-        enable = true;
-        theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
+      enable = true;
+      theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
     };
     #displayManager.sessionPackages = [hyprland-pkg];
   };
@@ -100,7 +98,7 @@
   users.users = {
     shudawei = {
       isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = [ "wheel" "networkmanager" ];
     };
   };
 
