@@ -20,7 +20,7 @@
       url = "github:catppuccin/grub";
       flake = false;
     };
-    getchoo.url = "~/git/getchoo.nix-exprs";
+    getchoo.url = "../getchoo.nix-exprs";
   };
 
   outputs =
