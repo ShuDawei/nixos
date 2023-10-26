@@ -51,9 +51,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      (inputs.getchoo.packages.${pkgs.system}.modrinth-app.overrideAttrs (prev: {
-        cargoBuildFlags = "--bin theseus_gui";
-      }))
+      inputs.getchoo.packages.${pkgs.system}.modrinth-app
       rnix-lsp
       prismlauncher
       ripgrep
