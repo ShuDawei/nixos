@@ -15,24 +15,6 @@
         "type": "github"
       }
     },
-    "getchoo": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1698316374,
-        "narHash": "sha256-PBDRdcJkKRd51dNo0OQOExJW1dlfGMNGa8Di96dgV1k=",
-        "ref": "refs/heads/main",
-        "rev": "522bd25017cdd03ffc84a7e1466e47dc8461465b",
-        "revCount": 174,
-        "type": "git",
-        "url": "file:///home/shudawei/git/getchoo.nix-exprs"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/shudawei/git/getchoo.nix-exprs"
-      }
-    },
     "grub-theme": {
       "flake": false,
       "locked": {
@@ -115,37 +97,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1697723726,
-        "narHash": "sha256-SaTWPkI8a5xSHX/rrKzUe+/uVNy6zCGMXgoeMb7T9rg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7c9cc5a6e5d38010801741ac830a3f8fd667a7a0",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1698160471,
-        "narHash": "sha256-lH7ZEItqQOWi21St9JyE6t3yyFNYGoQqSEcS90WMnBY=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "04f431fe64a5ba8ff129cbbbfec489cfe903982c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1698134075,
         "narHash": "sha256-foCD+nuKzfh49bIoiCBur4+Fx1nozo+4C/6k8BYk4sg=",
         "owner": "nixos",
@@ -160,14 +111,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1698288402,
+        "narHash": "sha256-jIIjApPdm+4yt8PglX8pUOexAdEiAax/DXW3S/Mb21E=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "60b9db998f71ea49e1a9c41824d09aa274be1344",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "getchoo": "getchoo",
         "grub-theme": "grub-theme",
         "home-manager": "home-manager",
         "hyprland-contrib": "hyprland-contrib",
         "neovim": "neovim",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable"
       }
     }
