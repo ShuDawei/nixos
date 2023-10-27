@@ -20,6 +20,7 @@
       url = "github:catppuccin/grub";
       flake = false;
     };
+    getchoo-fork.url = "../getchoo.nix-exprs";
   };
 
   outputs =
