@@ -13,6 +13,7 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
   boot.kernelModules = [ "v4l2loopback" ];
   boot.loader = {
