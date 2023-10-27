@@ -51,7 +51,6 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      inputs.getchoo-fork.packages.${pkgs.system}.modrinth-app
       rnix-lsp
       prismlauncher
       ripgrep
