@@ -52,7 +52,7 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
       rnix-lsp
-      #prismlauncher
+      prismlauncher
       ripgrep
       ladspaPlugins
       (import ../shared/scripts/vol.nix pkgs)
