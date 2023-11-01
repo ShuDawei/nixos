@@ -3,18 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    hyprland-contrib.url = "github:hyprwm/contrib";
     grub-theme = {
       url = "github:catppuccin/grub";
       flake = false;
@@ -33,7 +23,7 @@
         config.allowUnfree = true;
       };
       pkgs-ext = {
-        inherit (inputs) home-manager neovim hyprland-contrib;
+        inherit (inputs) home-manager hyprland-contrib;
       };
     in
     {
