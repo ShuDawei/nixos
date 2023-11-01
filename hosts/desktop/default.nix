@@ -1,3 +1,0 @@
-{
-  hdw = import ./hdw.nix;
-}
