@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    hyprland-contrib.url = "github:hyprwm/contrib";
-    grub-theme = {
-      url = "github:catppuccin/grub";
-      flake = false;
-    };
   };
 
   outputs =
