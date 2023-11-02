@@ -22,7 +22,6 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
-      theme = inputs.grub-theme + "/src/catppuccin-mocha-grub-theme";
     };
     efi.canTouchEfiVariables = true;
   };
