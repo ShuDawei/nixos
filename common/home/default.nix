@@ -25,7 +25,7 @@
       prismlauncher
       ripgrep
       ladspaPlugins
-      (import ../shared/scripts/vol.nix pkgs)
+      #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
       rustc
