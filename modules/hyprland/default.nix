@@ -12,8 +12,6 @@ in
   config = {
     home.packages = [
       pkgs.hyprpaper
-      pkgs.hyprpicker
-      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
     home.file.".config/hypr/hyprpaper.conf".text = ''
       splash = true;
