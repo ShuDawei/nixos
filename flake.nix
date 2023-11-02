@@ -29,14 +29,14 @@
             inherit pkgs inputs pkgs-ext;
           };
           modules = [
-            ./config/desktop/host.nix
+            ./old/config/desktop/host.nix
             pkgs-ext.home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = specialArgs;
-                users.shudawei = import ./config/desktop/home.nix;
+                users.shudawei = import ./old/config/desktop/home.nix;
               };
             }
           ];
