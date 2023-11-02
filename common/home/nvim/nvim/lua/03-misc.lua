@@ -17,7 +17,16 @@ require("presence").setup()
 require("dressing").setup()
 
 -- lewis6991/gitsigns.nvim --
-require("gitsigns").setup()
+-- require("gitsigns").setup({
+--     signs = {
+--         add          = { text = "+" },
+--         change       = { text = '_' },
+--         delete       = { text = '-' },
+--         topdelete    = { text = '-' },
+--         changedelete = { text = '~' },
+--         untracked    = { text = '?' },
+--     },
+-- })
 
 -- nvchad/nvim-colorizer.lua --
 require("colorizer").setup({
