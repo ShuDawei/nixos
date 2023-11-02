@@ -1,9 +1,9 @@
 { config, inputs, lib, pkgs, system, ... }:
 let
-  host-config = config.host-config.hyprland;
+  cfg = config.cfg.hyprland;
 in
 {
-  options.host-config.hyprland = {
+  options.cfg.hyprland = {
     nvidia-patches.enable = lib.mkEnableOption "enable nvidia patches";
     monitors = lib.mkOption { type = lib.types.listOf lib.types.str; };
     workspaces = lib.mkOption { type = lib.types.listOf lib.types.str; };
@@ -12,6 +12,8 @@ in
   config = {
     home.packages = [
       pkgs.hyprpaper
+      pkgs.hyprpicker
+      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
     home.file.".config/hypr/hyprpaper.conf".text = ''
       splash = true;
