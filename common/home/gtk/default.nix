@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   gtk = {
     enable = true;
     theme = {
@@ -6,10 +6,10 @@
       package = pkgs.rose-pine-gtk-theme;
     };
     font.name = "JetBrains Mono NL Nerd Font";
-    cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 8;
-    };
+    #cursorTheme = {
+    #  package = pkgs.bibata-cursors;
+    #  name = "Bibata-Modern-Classic";
+    #  size = 8;
+    #};
   };
 }
