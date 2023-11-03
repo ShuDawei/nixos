@@ -11,6 +11,7 @@
     ./pipewire
     ./wireplumber
   ];
+  programs.tmux.enable = true;
 
   home = {
     username = "shudawei";
