@@ -1,7 +1,7 @@
 { inputs, system }:
 
 {
-  nixosConfiguration = hostName: inputs.nixpkgs.lib.nixosSystem rec {
+  nixosConfiguration = hostname: username: inputs.nixpkgs.lib.nixosSystem rec {
     inherit system;
     specialArgs = {
       inherit inputs system;
@@ -12,15 +12,15 @@
     };
     modules = [
       ./common/host
-      ./${hostName}/host.nix
-      ./${hostName}/hrdw.nix
+      ./${hostname}/host.nix
+      ./${hostname}/hrdw.nix
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.shudawei = { ... }: { imports = [ ./common/home ./${hostName}/home.nix ]; };
+          users.${username} = { ... }: { imports = [ ./common/home ./${hostname}/home.nix ]; };
         };
       }
     ];
