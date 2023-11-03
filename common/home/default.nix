@@ -17,9 +17,7 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
       #shudawei.gpuinf
-      import
-      ../pkgs/gpuinf
-      { inherit pkgs; }
+      (import ../pkgs/gpuinf { inherit pkgs; })
       rnix-lsp
       prismlauncher
       ripgrep
