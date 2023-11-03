@@ -9,9 +9,9 @@ pkgs.writeScriptBin "gpuinf" ''
     let deg = nvidia-smi --query-gpu temperature.gpu --format csv | lines | get 1 | str replace " C" ""
     let res = {gpu: $gpu, mem: $mem, deg: $deg}
     if $j {
-      res | to json -r
+      $res | to json -r
     } else {
-      res
+      $res
     }
   }
 ''
