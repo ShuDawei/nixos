@@ -11,11 +11,9 @@
     ./pipewire
     ./wireplumber
   ];
-  programs.tmux = {
+
+  programs.zellij = {
     enable = true;
-    shortcut = "i";
-    keyMode = "vi";
-    shell = "${pkgs.nushell}/bin/nu";
   };
 
   home = {
