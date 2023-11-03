@@ -33,7 +33,6 @@
 
   programs.hyprland = {
     enable = true;
-    enableNvidiaPatches = true;
     xwayland.enable = true;
   };
 
@@ -43,7 +42,6 @@
     enable = true;
     layout = "de";
     xkbVariant = "";
-    videoDrivers = [ "nvidia" ];
     displayManager.lightdm.enable = false;
     displayManager.sddm = {
       enable = true;
@@ -56,11 +54,6 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-    };
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = true;
-      nvidiaSettings = true;
     };
   };
 
