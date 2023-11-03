@@ -1,7 +1,7 @@
 { inputs, system }:
 
 {
-  nixosConfiguration = hostname: username: inputs.nixpkgs.lib.nixosSystem rec {
+  nixosConfiguration = username: hostname: inputs.nixpkgs.lib.nixosSystem rec {
     inherit system;
     specialArgs = {
       inherit inputs system;
