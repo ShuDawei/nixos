@@ -4,7 +4,7 @@
   nixosConfiguration = username: hostname: inputs.nixpkgs.lib.nixosSystem rec {
     inherit system;
     specialArgs = {
-      inherit inputs system;
+      inherit inputs system username hostname;
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;

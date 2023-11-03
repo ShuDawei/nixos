@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, hostname, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostName = "desktop";
+    hostName = hostname;
     networkmanager.enable = true;
   };
 
@@ -75,7 +75,7 @@
   ];
 
   users.users = {
-    shudawei = {
+    ${username} = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
     };
