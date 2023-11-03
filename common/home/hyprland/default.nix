@@ -1,7 +1,6 @@
-{ pkgs
-, pkgs-ext
-, ...
-}: {
+{ pkgs, ... }:
+
+{
   home.packages = [
     pkgs.hyprpaper
   ];
