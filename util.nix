@@ -1,7 +1,7 @@
 { inputs, lib, pkgs, system }:
 
 {
-  nixosConfiguration = hostName: lib.nixosSystem {
+  nixosConfiguration = hostName: lib.nixosSystem rec {
     inherit system;
     specialArgs = { inherit inputs pkgs system; };
     modules = [
