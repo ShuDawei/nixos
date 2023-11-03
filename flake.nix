@@ -14,11 +14,6 @@
     let
       util = import ./util.nix rec {
         inherit inputs;
-        inherit (nixpkgs) lib;
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
         system = "x86_64-linux";
       };
     in
