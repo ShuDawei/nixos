@@ -1,8 +1,10 @@
 { inputs, pkgs, system, ... }:
 
 {
-  home.packages = [
-    pkgs.hyprpaper
+  home.packages = with pkgs; [
+    hyprpaper
+    slurp
+    jq
   ];
   home.file.".config/hypr/hyprpaper.conf".text = ''
     splash = true;
