@@ -60,7 +60,7 @@
         "SUPER SHIFT,8,movetoworkspace,8"
         "SUPER SHIFT,9,movetoworkspace,9"
         "SUPER SHIFT,0,movetoworkspace,10"
-        ",PRINT,exec,${inputs.hyprwm-contrib.packages.${system}.grimblast}/bin/grimblast --freeze copy area"
+        ",PRINT,exec,${inputs.hyprwm-contrib.packages.${system}.grimblast}/grimblast --freeze copy area"
         ",KP_ADD,exec,vol mic"
         ",KP_SUBTRACT,pass,^(com.obsproject.Studio)$"
       ];
