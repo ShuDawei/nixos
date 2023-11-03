@@ -24,7 +24,7 @@
     in
     {
       nixosConfigurations = {
-        desktop = util.nixosConfiguration "desktop";
+        desktop = util.nixosConfiguration "shudawei" "desktop";
       };
     };
 }

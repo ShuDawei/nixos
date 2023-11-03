@@ -1,9 +1,15 @@
-{ inputs, lib, pkgs, system }:
+{ inputs, system }:
 
 {
-  nixosConfiguration = hostName: lib.nixosSystem rec {
+  nixosConfiguration = hostName: inputs.nixpkgs.lib.nixosSystem rec {
     inherit system;
-    specialArgs = { inherit inputs pkgs system; };
+    specialArgs = {
+      inherit inputs system;
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    };
     modules = [
       ./common/host
       ./${hostName}/host.nix
