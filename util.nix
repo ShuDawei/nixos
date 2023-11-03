@@ -6,7 +6,6 @@
     specialArgs = { inherit inputs pkgs system; };
     modules = [
       ./common/host
-      ./common/home
       ./${hostName}/host.nix
       ./${hostName}/hrdw.nix
       inputs.home-manager.nixosModules.home-manager
@@ -15,7 +14,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.shudawei = import ./${hostName}/home.nix;
+          users.shudawei = { ... }: { imports = [ ./common/home ./${hostName}/home.nix ]; };
         };
       }
     ];
