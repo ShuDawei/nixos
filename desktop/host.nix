@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  imports = [ ../common/host ./hrdw.nix ];
-
   programs.hyprland.enableNvidiaPatches = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {

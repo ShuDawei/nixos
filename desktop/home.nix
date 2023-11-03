@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  imports = [ ../common/home ];
-
   wayland.windowManager.hyprland = {
     enableNvidiaPatches = true;
     settings = {

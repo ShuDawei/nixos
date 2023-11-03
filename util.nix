@@ -8,6 +8,7 @@
       ./common/host
       ./common/home
       ./${hostName}/host.nix
+      ./${hostName}/hrdw.nix
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
