@@ -30,6 +30,7 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+  environment.systemPackages = with pkgs; [ libsForQt5.qt5.qtgraphicaleffects ];
 
   programs.hyprland = {
     enable = true;
