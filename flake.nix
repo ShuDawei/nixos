@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    hyprwm-contrib.url = "github:hyprwm/contrib";
     sddm-rose-pine = {
       url = "github:lwndhrst/sddm-rose-pine";
       flake = false;
