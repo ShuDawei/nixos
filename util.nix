@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, username }:
+{ inputs, lib, pkgs, system }:
 
 {
   nixosConfiguration = hostName: lib.nixosSystem {
@@ -14,7 +14,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.${username} = import ./${hostName}/home.nix;
+          users.shudawei = import ./${hostName}/home.nix;
         };
       }
     ];

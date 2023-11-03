@@ -12,35 +12,19 @@
     , ...
     } @ inputs:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      pkgs-ext = {
-        inherit (inputs) home-manager hyprland-contrib;
+      util = import ./util.nix rec {
+        inherit inputs;
+        inherit (nixpkgs) lib;
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        system = "x86_64-linux";
       };
     in
     {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          specialArgs = {
-            inherit pkgs inputs pkgs-ext;
-          };
-          modules = [
-            ./desktop/host.nix
-            pkgs-ext.home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = specialArgs;
-                users.shudawei = import ./desktop/home.nix;
-              };
-            }
-          ];
-        };
+        desktop = util.nixosConfiguration "desktop";
       };
     };
 }
