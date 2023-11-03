@@ -11,7 +11,7 @@
         overlays = [
           (final: prev: {
             shudawei = {
-              gpuinf = import ./common/pkgs/gpuinf { inherit prev; };
+              gpuinf = import ./common/pkgs/gpuinf { pkgs = prev; };
             };
           })
         ];
