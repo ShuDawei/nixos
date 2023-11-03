@@ -3,14 +3,9 @@
 {
   imports = [
     ./alacritty
-    ./btop
-    ./dunst
-    ./firefox
-    ./fzf
-    ./gh
-    ./git
     ./gtk
     ./hyprland
+    ./misc
     ./nushell
     ./nvim
     ./pipewire
