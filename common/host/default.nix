@@ -1,4 +1,4 @@
-{ pkgs, username, hostname, ... }:
+{ inputs, pkgs, username, hostname, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -45,7 +45,7 @@
     displayManager.lightdm.enable = false;
     displayManager.sddm = {
       enable = true;
-      #theme = "${import ../shared/drv/catppuccin-sddm-theme.nix { inherit pkgs; }}/src/catppuccin-mocha";
+      theme = "${inputs.sddm-rose-pine}";
     };
   };
 
