@@ -11,7 +11,12 @@
     ./pipewire
     ./wireplumber
   ];
-  programs.tmux.enable = true;
+  programs.tmux = {
+    enable = true;
+    prefix = "C-i";
+    keyMode = "vi";
+    shell = "${pkgs.nushell}/bin/nu";
+  };
 
   home = {
     username = "shudawei";
