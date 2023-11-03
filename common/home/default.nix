@@ -16,8 +16,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      #shudawei.gpuinf
-      (import ../pkgs/gpuinf { inherit pkgs; })
+      shudawei.gpuinf
       rnix-lsp
       prismlauncher
       ripgrep
