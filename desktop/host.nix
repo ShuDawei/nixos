@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ../common/host ./hdw.nix ];
+  imports = [ ../common/host ./hrdw.nix ];
 }
