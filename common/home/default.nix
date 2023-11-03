@@ -13,7 +13,7 @@
   ];
   programs.tmux = {
     enable = true;
-    prefix = "C-i";
+    shortcut = "i";
     keyMode = "vi";
     shell = "${pkgs.nushell}/bin/nu";
   };
