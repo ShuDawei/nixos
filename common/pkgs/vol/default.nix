@@ -1,6 +1,8 @@
 pkgs:
 
 pkgs.writeScriptBin "vol" ''
+  #! ${pkgs.nushell}/bin/nu
+
   def "main" [] {}
 
   def "main inc" [] {
