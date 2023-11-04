@@ -21,6 +21,7 @@
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
       shudawei.gpuinf
+      shudawei.vol
       rnix-lsp
       prismlauncher
       ripgrep
