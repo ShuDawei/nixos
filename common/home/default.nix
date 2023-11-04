@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   imports = [
@@ -20,6 +20,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+      inputs.zellij-zjstatus.packages.${system}.default
       shudawei.gpuinf
       shudawei.vol
       rnix-lsp
