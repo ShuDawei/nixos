@@ -29,7 +29,7 @@
       #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
-      rustup
+      #rustup
       #rustc
       #cargo
       #rustfmt
