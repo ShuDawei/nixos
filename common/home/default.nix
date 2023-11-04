@@ -20,7 +20,6 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      inputs.zellij-zjstatus.packages.${system}.default
       shudawei.gpuinf
       shudawei.vol
       rnix-lsp
@@ -30,6 +29,7 @@
       #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
+      rustup
       rustc
       cargo
       rustfmt
