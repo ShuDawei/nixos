@@ -32,8 +32,8 @@
       rustup
       #rustc
       #cargo
-      rustfmt
-      rust-analyzer
+      #rustfmt
+      #rust-analyzer
       nodePackages.typescript-language-server
       nodePackages.prettier
 
