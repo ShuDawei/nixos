@@ -30,8 +30,8 @@
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
       rustup
-      rustc
-      cargo
+      #rustc
+      #cargo
       rustfmt
       rust-analyzer
       nodePackages.typescript-language-server
