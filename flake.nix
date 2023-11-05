@@ -9,7 +9,6 @@
       url = "github:lwndhrst/sddm-rose-pine";
       flake = false;
     };
-    zellij-zjstatus.url = "github:dj95/zjstatus";
   };
 
   outputs = { ... } @ inputs:
