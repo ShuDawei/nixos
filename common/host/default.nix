@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, hostname, ... }:
+{ inputs, pkgs, system, username, hostname, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -35,6 +35,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${system}.default;
   };
 
   programs.steam.enable = true;
