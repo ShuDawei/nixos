@@ -35,7 +35,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${system}.default;
+    # package = inputs.hyprland.packages.${system}.default;
   };
 
   programs.steam.enable = true;

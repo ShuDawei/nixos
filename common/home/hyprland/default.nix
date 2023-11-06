@@ -13,7 +13,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${system}.default;
+    # package = inputs.hyprland.packages.${system}.default;
     settings = {
       env = [
         "EDITOR,nvim"
