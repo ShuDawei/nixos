@@ -35,7 +35,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
   };
 
   programs.steam.enable = true;
