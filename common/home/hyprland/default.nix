@@ -36,6 +36,9 @@
         drop_shadow = false;
       };
       animations.enabled = false;
+      windowrule = [
+        "float,title:^(farrealms)(.*)$"
+      ];
       bindr = [ "SUPER,SUPER_L,exec,bemenu-run -l 7" ];
       bind = [
         "SUPER,RETURN,exec,alacritty"
