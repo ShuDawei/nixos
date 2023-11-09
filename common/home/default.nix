@@ -20,6 +20,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+      shudawei.dev
       shudawei.gpuinf
       shudawei.vol
       rnix-lsp
