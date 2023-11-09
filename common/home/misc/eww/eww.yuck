@@ -1,0 +1,86 @@
+; === background === ;
+(defvar rp-base           "#191724")
+(defvar rp-surface        "#1f1d2e")
+(defvar rp-overlay        "#26233a")
+; === text === ;
+(defvar rp-muted          "#6e6a86")
+(defvar rp-subtle         "#908caa")
+(defvar rp-text           "#e0def4")
+; === accent === ;
+(defvar rp-love           "#eb6f92")
+(defvar rp-gold           "#f6c177")
+(defvar rp-rose           "#ebbcba")
+(defvar rp-pine           "#31748f")
+(defvar rp-foam           "#9ccfd8")
+(defvar rp-iris           "#c4a7e7")
+(defvar rp-highlight-low  "#21202e")
+(defvar rp-highlight-med  "#403d52")
+(defvar rp-highlight-high "#524f67")
+
+(defwindow test
+    :geometry (geometry :x "16px" :y "16px" :width "1000px" :height "32px" :anchor "top center")
+    :monitor 0 :stacking "fg" :exclusive true :focusable true
+    (input :value "test"))
+
+(defwindow bar
+    :geometry (geometry :x "16px" :y "16px" :width "1888px" :height "32px" :anchor "top center")
+    :monitor 0 :stacking "fg" :exclusive true
+    (box 
+        :style "background: ${rp-base}; border-radius: 8px; border: 2px solid ${rp-overlay}; padding: 0px 8px;" 
+        (left) (right)))
+
+(defwindow mid
+    :geometry (geometry :x "0px" :y "-30px" :width "256px" :height "28px" :anchor "top center")
+    :monitor 0 :stacking "overlay" :exclusive false
+    (box
+        :style "background: rgba(25, 23, 36, 0.5); padding: 0px 8px; border-radius: 8px;"
+        ;:style "mix-blend-mode: difference;"
+        ;:style "text-shadow: rgba(25, 23, 36, 0.25) 1px 1px;"
+        :space-evenly false :spacing 8 :halign "center"
+        (label 
+            :style "color: ${rp-subtle};"
+            :text "${formattime(EWW_TIME, "%a %d.%m.%y")}")
+        (label 
+            :style "color: ${rp-subtle};"
+            :text "@")
+        (label 
+            :style "color: ${rp-text};"
+            :text "${formattime(EWW_TIME, "%H:%M:%S")}")))
+
+(defwidget left [] (box
+    :space-evenly false :spacing 8 :halign "start"
+    (for ws in EXT_WS (label 
+        :style "${ws.active ? "text-decoration: underline;" : "color: ${rp-subtle}"}"
+        :text "${ws.id}"))))
+
+(defwidget right [] (box
+    :space-evenly false :spacing 8 :halign "end"
+    (box
+        :space-evenly false
+        (label :style "color: ${rp-muted}; font-size: 12px;" :text "mic@")
+        (label :style "color: ${EXT_MIC ? rp-pine : rp-love}; font-size: 12px;" :text "${EXT_MIC ? "on" : "off"}"))
+    (box
+        :space-evenly false
+        (label :style "color: ${rp-muted}; font-size: 12px;" :text "vol@")
+        (label :style "color: ${rp-iris}; font-size: 12px;" :text "${round(EXT_VOL, 0)}%"))
+    (box
+        :space-evenly false
+        (label :style "color: ${rp-muted}; font-size: 12px;" :text "cpu@")
+        (label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EWW_CPU.avg, 0)}%")
+        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${round(EWW_TEMPS.K10TEMP_TCTL, 0)}C)"))
+    (box
+        :space-evenly false
+        (label :style "color: ${rp-muted}; font-size: 12px;" :text "gpu@")
+        (label :style "color: ${rp-rose}; font-size: 12px;" :text "${EXT_GPU.gpu}%")
+        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${EXT_GPU.deg}C)"))
+        ;(label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EXT_GPU.mem, 2)}G")
+    (box
+        :space-evenly false
+        (label :style "color: ${rp-muted}; font-size: 12px;" :text "mem@")
+        (label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EWW_RAM.used_mem / 1000000000, 2)}G"))
+))
+
+(deflisten EXT_WS "nu ./nu/ws.nu")
+(defvar EXT_MIC false)
+(defvar EXT_VOL 0.0)
+(defpoll EXT_GPU :interval "2s" "gpuinf -j")

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.btop = {
@@ -12,5 +12,11 @@
     enable = true;
     userEmail = "d-zeidler@gmx.de";
     userName = "shudawei";
+  };
+
+  programs.eww = {
+    enable = true;
+    package = (pkgs.eww.override { withWayland = true; });
+    configDir = ./eww;
   };
 }
