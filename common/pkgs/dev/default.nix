@@ -7,7 +7,7 @@ pkgs.writeScriptBin "dev" ''
       let path = $path | path expand
       let name = $path | path basename
       enter $path
-      zellij --session $name
+      try { nix develop --command zellij --session $name } catch { zellij --session $name }
       dexit
   }
 ''
