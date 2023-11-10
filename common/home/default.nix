@@ -12,10 +12,6 @@
     ./wireplumber
   ];
 
-  programs.zellij = {
-    enable = true;
-  };
-
   home = {
     username = "shudawei";
     homeDirectory = "/home/shudawei";

@@ -19,4 +19,12 @@
     package = (pkgs.eww.override { withWayland = true; });
     configDir = ./eww;
   };
+
+  programs.zellij = {
+    enable = true;
+  };
+  home.file.".config/zellij" = {
+    source = ./zellij;
+    recursive = true;
+  };
 }
