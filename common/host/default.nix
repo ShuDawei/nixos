@@ -47,7 +47,7 @@
     displayManager.lightdm.enable = false;
     displayManager.sddm = {
       enable = true;
-      theme = "${inputs.sddm-rose-pine}";
+      theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
     };
   };
 

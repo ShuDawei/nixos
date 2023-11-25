@@ -6,8 +6,8 @@
     home-manager.url = "github:nix-community/home-manager";
     # hyprland.url = "github:hyprwm/hyprland";
     hyprwm-contrib.url = "github:hyprwm/contrib";
-    sddm-rose-pine = {
-      url = "github:lwndhrst/sddm-rose-pine";
+    sddm-catppuccin = {
+      url = "github:catppuccin/sddm";
       flake = false;
     };
   };
