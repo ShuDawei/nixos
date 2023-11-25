@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1700814342,
-        "narHash": "sha256-orNc5wfsE7arQ9TWSTJwvk+utDvJrJ36V84N8o+VI/Y=",
+        "lastModified": 1700847865,
+        "narHash": "sha256-uWaOIemGl9LF813MW0AEgCBpKwFo2t1Wv3BZc6e5Frw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e1f3b36ab01573fd35cae57d21f45d520433df61",
+        "rev": "8cedd63eede4c22deb192f1721dd67e7460e1ebe",
         "type": "github"
       },
       "original": {
@@ -89,22 +89,22 @@
         "home-manager": "home-manager",
         "hyprwm-contrib": "hyprwm-contrib",
         "nixpkgs": "nixpkgs_3",
-        "sddm-rose-pine": "sddm-rose-pine"
+        "sddm-catppuccin": "sddm-catppuccin"
       }
     },
-    "sddm-rose-pine": {
+    "sddm-catppuccin": {
       "flake": false,
       "locked": {
-        "lastModified": 1683980312,
-        "narHash": "sha256-9F+TOWqc88D9+OqQnXlaghBf1z/89XYforFspqbste0=",
-        "owner": "lwndhrst",
-        "repo": "sddm-rose-pine",
-        "rev": "e8735051bf4a418efaf076f52cb3d7873ccd1509",
+        "lastModified": 1698433715,
+        "narHash": "sha256-tyuwHt48cYqG5Pn9VHa4IB4xlybHOxPmhdN9eae36yo=",
+        "owner": "catppuccin",
+        "repo": "sddm",
+        "rev": "a13cf43fe05a6c463a7651eb2d96691a36637913",
         "type": "github"
       },
       "original": {
-        "owner": "lwndhrst",
-        "repo": "sddm-rose-pine",
+        "owner": "catppuccin",
+        "repo": "sddm",
         "type": "github"
       }
     }
