@@ -16,6 +16,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+      ffmpeg
       yt-dlp
       shudawei.dev
       shudawei.gpuinf
