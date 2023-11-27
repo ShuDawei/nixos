@@ -16,6 +16,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+      yt-dlp
       shudawei.dev
       shudawei.gpuinf
       shudawei.vol
