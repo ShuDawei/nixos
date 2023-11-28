@@ -95,11 +95,11 @@
     "sddm-catppuccin": {
       "flake": false,
       "locked": {
-        "lastModified": 1698433715,
-        "narHash": "sha256-tyuwHt48cYqG5Pn9VHa4IB4xlybHOxPmhdN9eae36yo=",
+        "lastModified": 1701170201,
+        "narHash": "sha256-gXUi6rBUr8ZGbUbo1/rMYIvbluKkyqqe+PMP3Xwf/kI=",
         "owner": "catppuccin",
         "repo": "sddm",
-        "rev": "a13cf43fe05a6c463a7651eb2d96691a36637913",
+        "rev": "529ec0f994c0e2527f118d17b143892f4d214575",
         "type": "github"
       },
       "original": {
