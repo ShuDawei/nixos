@@ -4,7 +4,7 @@ require("neodev").setup()
 require("fidget").setup({
     progress = {
         display = {
-            progress_icon = { ".  ", ".. ", "..." },
+            progress_icon = { pattern = { ".  ", ".. ", "..." }, period = 2 },
             done_icon = "[done]",
         },
     },
