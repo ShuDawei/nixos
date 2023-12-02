@@ -2,9 +2,11 @@ local lib = require("lib.lsp")
 
 require("neodev").setup()
 require("fidget").setup({
-    text = {
-        spinner = { ".  ", ".. ", "..." },
-        done = "[done]",
+    progress = {
+        display = {
+            progress_icon = { ".  ", ".. ", "..." },
+            done_icon = "[done]",
+        },
     },
 })
 
