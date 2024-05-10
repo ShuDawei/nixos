@@ -2,7 +2,6 @@
 
 {
   wayland.windowManager.hyprland = {
-    enableNvidiaPatches = true;
     settings = {
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
