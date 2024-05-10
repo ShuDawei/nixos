@@ -21,7 +21,6 @@
       shudawei.dev
       shudawei.gpuinf
       shudawei.vol
-      rnix-lsp
       prismlauncher
       ripgrep
       ladspaPlugins
