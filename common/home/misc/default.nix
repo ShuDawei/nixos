@@ -16,7 +16,7 @@
 
   programs.eww = {
     enable = true;
-    package = (pkgs.eww.override { withWayland = true; });
+    #package = (pkgs.eww.override { withWayland = true; });
     configDir = ./eww;
   };
 
