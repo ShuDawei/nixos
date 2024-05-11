@@ -8,7 +8,7 @@
     ./misc
     ./nushell
     ./nvim
-    ./pipewire
+    #./pipewire
     ./wireplumber
   ];
 
