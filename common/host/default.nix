@@ -41,14 +41,16 @@
   programs.steam.enable = true;
 
   services.xserver = {
-    enable = true;
-    layout = "de";
-    xkbVariant = "";
-    displayManager.lightdm.enable = false;
-    displayManager.sddm = {
-      enable = true;
-      theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
+    xkb = {
+      layout = "de";
+      variant = "";
     };
+    enable = true;
+    displayManager.lightdm.enable = false;
+  };
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
   };
 
   hardware = {
