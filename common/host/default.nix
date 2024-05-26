@@ -47,10 +47,10 @@
     };
     enable = true;
     displayManager.lightdm.enable = false;
-    displayManager.sddm = {
-      enable = true;
-      theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
-    };
+  };
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
   };
 
   hardware = {
