@@ -30,7 +30,13 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-  environment.systemPackages = with pkgs; [ libsForQt5.qt5.qtgraphicaleffects ];
+  environment.systemPackages = with pkgs; [ 
+    catppuccin-sddm.override {
+      flavor = "mocha";
+      font  = "JetBrainsMono Nerd Font";
+      loginBackground = true;
+    }
+  ];
 
   programs.hyprland = {
     enable = true;
@@ -50,7 +56,7 @@
   };
   services.displayManager.sddm = {
     enable = true;
-    theme = "${inputs.sddm-catppuccin}/src/catppuccin-mocha";
+    theme = "catppuccin-mocha";
   };
 
   hardware = {
