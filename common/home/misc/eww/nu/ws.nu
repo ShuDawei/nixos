@@ -29,4 +29,4 @@ def roman [num] {
 }
 
 ws
-socat -u $"UNIX-CONNECT:/tmp/hypr/($env.HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock" - | each { ws }
+socat -u $"UNIX-CONNECT:($env.XDG_RUNTIME_DIR)/hypr/($env.HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock" - | each { ws }
