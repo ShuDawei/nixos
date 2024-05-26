@@ -31,11 +31,11 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
   environment.systemPackages = with pkgs; [ 
-    catppuccin-sddm.override {
+    (catppuccin-sddm.override {
       flavor = "mocha";
       font  = "JetBrainsMono Nerd Font";
       loginBackground = true;
-    }
+    })
   ];
 
   programs.hyprland = {
