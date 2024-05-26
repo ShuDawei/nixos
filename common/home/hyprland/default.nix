@@ -21,9 +21,9 @@
       env = [
         "EDITOR,nvim"
       ];
-      monitor=[
+      monitor = {
         "Unknown-1" = "disable";
-      ];
+      };
       input = {
         kb_layout = "de";
         follow_mouse = 1;
