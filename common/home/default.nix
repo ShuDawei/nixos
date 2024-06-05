@@ -16,7 +16,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-      nixfmt
+      nixfmt-rfc-style
       cubiomes-viewer
       ffmpeg
       yt-dlp
