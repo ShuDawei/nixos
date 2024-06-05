@@ -17,7 +17,6 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim
-      presence-nvim
       rose-pine
       telescope-nvim
       vim-fugitive

@@ -8,15 +8,15 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            shudawei = {
-              dev = import ./common/pkgs/dev prev;
-              gpuinf = import ./common/pkgs/gpuinf prev;
-              vol = import ./common/pkgs/vol prev;
-            };
-          })
-        ];
+        #overlays = [
+        #  (final: prev: {
+        #    shudawei = {
+        #      dev = import ./common/pkgs/dev prev;
+        #      gpuinf = import ./common/pkgs/gpuinf prev;
+        #      vol = import ./common/pkgs/vol prev;
+        #    };
+        #  })
+        #];
       };
     };
     modules = [
