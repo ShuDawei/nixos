@@ -1,4 +1,9 @@
-{ inputs, pkgs, system, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -18,9 +23,7 @@
     xwayland.enable = true;
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
-      env = [
-        "EDITOR,nvim"
-      ];
+      env = [ "EDITOR,nvim" ];
       input = {
         kb_layout = "de";
         follow_mouse = 1;
@@ -39,9 +42,7 @@
         drop_shadow = false;
       };
       animations.enabled = false;
-      windowrule = [
-        "float,title:^(farrealms)(.*)$"
-      ];
+      windowrule = [ "float,title:^(farrealms)(.*)$" ];
       bindr = [ "SUPER,SUPER_L,exec,bemenu-run -l 7" ];
       bind = [
         "SUPER,RETURN,exec,alacritty"
@@ -80,7 +81,10 @@
         ",XF86AudioRaiseVolume,exec,vol inc"
         ",XF86AudioLowerVolume,exec,vol dec"
       ];
-      exec-once = [ "hyprpaper" "eww open-many bar mid" ];
+      exec-once = [
+        "hyprpaper"
+        "eww open-many bar mid"
+      ];
       windowrulev2 = [
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"

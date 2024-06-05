@@ -1,7 +1,17 @@
-{ inputs, pkgs, system, username, hostname, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  username,
+  hostname,
+  ...
+}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot = {
     supportedFilesystems = [ "ntfs" ];
@@ -27,13 +37,11 @@
     keyMap = "de";
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
-  environment.systemPackages = with pkgs; [ 
+  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  environment.systemPackages = with pkgs; [
     (catppuccin-sddm.override {
       flavor = "mocha";
-      font  = "JetBrainsMono Nerd Font";
+      font = "JetBrainsMono Nerd Font";
     })
   ];
 
@@ -79,14 +87,15 @@
   #};
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   users.users = {
     ${username} = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
     };
   };
 

@@ -12,7 +12,8 @@
     };
   };
 
-  outputs = { ... } @ inputs:
+  outputs =
+    { ... }@inputs:
     let
       util = import ./util.nix rec {
         inherit inputs;
@@ -25,4 +26,3 @@
       };
     };
 }
-
