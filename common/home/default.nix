@@ -19,9 +19,9 @@
       cubiomes-viewer
       ffmpeg
       yt-dlp
-      shudawei.dev
-      shudawei.gpuinf
-      shudawei.vol
+      #shudawei.dev
+      #shudawei.gpuinf
+      #shudawei.vol
       prismlauncher
       ripgrep
       ladspaPlugins
