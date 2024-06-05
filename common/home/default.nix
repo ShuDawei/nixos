@@ -30,6 +30,7 @@
       #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
+      rustup
       rustc
       cargo
       rustfmt
