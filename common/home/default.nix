@@ -35,10 +35,10 @@
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
       #rustup
-      #rustc
-      #cargo
-      #rustfmt
-      #rust-analyzer
+      rustc
+      cargo
+      rustfmt
+      rust-analyzer
       nodePackages.typescript-language-server
       nodePackages.prettier
 
