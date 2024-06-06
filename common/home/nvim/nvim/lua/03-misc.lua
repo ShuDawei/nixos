@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>fe", ":Oil<cr>")
 require("nvim-autopairs").setup()
 
 -- stevearc/dressing.nvim --
-require("dressing").setup()
+-- require("dressing").setup()
 
 -- lewis6991/gitsigns.nvim --
 -- require("gitsigns").setup({

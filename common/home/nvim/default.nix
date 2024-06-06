@@ -6,7 +6,7 @@
       cmp-buffer
       cmp-nvim-lsp
       cmp-path
-      dressing-nvim
+      #dressing-nvim
       fidget-nvim
       gitsigns-nvim
       lualine-nvim
