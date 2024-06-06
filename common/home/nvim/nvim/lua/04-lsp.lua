@@ -23,8 +23,8 @@ local cmp = require("cmp")
 cmp.setup({
     mapping = {
         ["<c-space>"] = cmp.mapping.complete(),
-        ["<tab>"] = cmp.mapping.select_next_item(),
-        ["<s-tab>"] = cmp.mapping.select_prev_item(),
+        ["<c-k>"] = cmp.mapping.select_next_item(),
+        ["<c-j>"] = cmp.mapping.select_prev_item(),
         ["<cr>"] = cmp.mapping.confirm({ select = true }),
     },
     snippet = {
