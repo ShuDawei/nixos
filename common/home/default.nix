@@ -26,6 +26,7 @@
       #shudawei.gpuinf
       #shudawei.vol
       prismlauncher
+      modrinth-app
       ripgrep
       #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
