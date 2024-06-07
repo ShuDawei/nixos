@@ -27,7 +27,7 @@
       opengl = {
           nvidia_anti_flicker = true;
       };
-      cursor = {
+      Cursor = {
         no_hardware_cursors = true;
       };
       input = {
