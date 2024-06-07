@@ -24,6 +24,9 @@
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
       env = [ "EDITOR,nvim" ];
+      cursor = {
+        no_hardware_cursors = true;
+      };
       input = {
         kb_layout = "de";
         follow_mouse = 1;
