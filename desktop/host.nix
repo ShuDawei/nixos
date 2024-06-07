@@ -6,7 +6,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   hardware.opengl = {
     enable = true;

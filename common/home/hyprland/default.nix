@@ -24,12 +24,9 @@
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
       env = [ "EDITOR,nvim" ];
-      opengl = {
-          nvidia_anti_flicker = true;
-      };
-      Cursor = {
-        no_hardware_cursors = true;
-      };
+      #cursor = {
+      #  no_hardware_cursors = true;
+      #};
       input = {
         kb_layout = "de";
         follow_mouse = 1;
