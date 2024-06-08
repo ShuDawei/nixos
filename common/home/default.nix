@@ -37,6 +37,7 @@
       clippy
       rustfmt
       rust-analyzer
+      cargo-expand
 
       discord
       bemenu
