@@ -4,8 +4,8 @@ keybinds clear-defaults=true {
     }
     shared_except "tab" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
-        bind "Ctrl Shift j" { GoToNextTab; }
-        bind "Ctrl Shift k" { GoToPreviousTab; }
+        bind "F11" { GoToNextTab; }
+        bind "F12" { GoToPreviousTab; }
     }
     tab {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
