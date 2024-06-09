@@ -9,7 +9,7 @@
       keyboard.bindings = [
         {
             key = "Tab";
-            mods = "Ctrl";
+            mods = "Cotrol";
             chars = "b";
         }
       ];
