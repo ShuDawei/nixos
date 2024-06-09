@@ -10,12 +10,12 @@
         {
             key = "Tab";
             mods = "Control";
-            chars = "\uE000";
+            chars = "";
         }
         {
             key = "Tab";
             mods = "Control|Shift";
-            chars = "\uE001";
+            chars = "";
         }
       ];
     };
