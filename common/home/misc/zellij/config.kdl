@@ -2,13 +2,15 @@ keybinds clear-defaults=true {
     shared_except "normal" {
         bind "Esc" { SwitchToMode "Normal"; }
     }
-shared_except "tab" {
+    shared_except "tab" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl Tab" { GoToNextTab; }
+        bind "Ctrl Shift Tab" { GoToPreviousTab; }
     }
     tab {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "k" { GoToPreviousTab; }
-        bind "j" { GoToNextTab; }
+        // bind "k" { GoToPreviousTab; }
+        // bind "j" { GoToNextTab; }
         bind "n" { NewTab; SwitchToMode "Normal"; }
         bind "x" { CloseTab; SwitchToMode "Normal"; }
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
