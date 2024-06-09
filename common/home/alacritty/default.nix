@@ -10,12 +10,12 @@
         {
             key = "Tab";
             mods = "Control";
-            chars = "f11";
+            chars = "\uE000";
         }
         {
             key = "Tab";
             mods = "Control|Shift";
-            chars = "f12";
+            chars = "\uE001";
         }
       ];
     };

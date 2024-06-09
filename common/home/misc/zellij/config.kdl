@@ -4,8 +4,10 @@ keybinds clear-defaults=true {
     }
     shared_except "tab" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
-        bind "F11" { GoToNextTab; }
-        bind "F12" { GoToPreviousTab; }
+        // \uE000
+        bind "" { GoToNextTab; }
+        // \uE001
+        bind "" { GoToPreviousTab; }
     }
     tab {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
