@@ -44,7 +44,6 @@
       wl-clipboard
       lua-language-server
       socat
-      seamly2d
     ];
   };
 
