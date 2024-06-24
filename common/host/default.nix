@@ -42,6 +42,7 @@
     (catppuccin-sddm.override {
       flavor = "mocha";
       font = "JetBrainsMono Nerd Font";
+      loginBackground = true;
     })
   ];
 

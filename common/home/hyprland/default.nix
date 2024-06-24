@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     hyprpaper
     hyprpicker
-    inputs.hyprwm-contrib.packages.${system}.grimblast
+    grimblast
   ];
   home.file.".config/hypr/hyprpaper.conf".text = ''
     splash = true;
