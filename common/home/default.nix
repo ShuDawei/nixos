@@ -39,8 +39,7 @@
       rust-analyzer
       cargo-expand
 
-      gradle
-      jdk22
+      sbt
 
       discord
       bemenu
