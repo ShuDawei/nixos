@@ -40,7 +40,7 @@
       cargo-expand
 
       gradle
-      java_language_server
+      java-language-server
 
       discord
       bemenu
