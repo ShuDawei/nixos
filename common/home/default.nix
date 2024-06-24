@@ -39,6 +39,9 @@
       rust-analyzer
       cargo-expand
 
+      gradle
+      jdk22
+
       discord
       bemenu
       wl-clipboard
