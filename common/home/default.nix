@@ -39,8 +39,8 @@
       rust-analyzer
       cargo-expand
 
-      sbt
-      metals
+      gradle
+      java_language_server
 
       discord
       bemenu
