@@ -11,6 +11,7 @@ require("fidget").setup({
 })
 
 lib.setupls("rust_analyzer")
+lib.setupls("metals")
 lib.setupls("lua_ls", {
     Lua = {
         workspace = { checkThirdParty = false },
