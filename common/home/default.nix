@@ -40,6 +40,7 @@
       cargo-expand
 
       sbt
+      metals
 
       discord
       bemenu
