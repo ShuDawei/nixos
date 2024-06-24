@@ -41,6 +41,7 @@
 
       gradle
       java-language-server
+      jdk21_headless
 
       discord
       bemenu
