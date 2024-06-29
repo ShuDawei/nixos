@@ -3,8 +3,8 @@ require("telescope").setup({
         border = {},
         borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
         file_ignore_patterns = {
-            "build",
-            "bin",
+            "build/",
+            "bin/",
         }
     },
 })
