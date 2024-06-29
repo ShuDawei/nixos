@@ -40,8 +40,7 @@
       cargo-expand
 
       gradle
-      java-language-server
-      jdk21_headless
+      jdt-language-server
 
       discord
       bemenu

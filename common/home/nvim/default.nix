@@ -21,6 +21,7 @@
       rose-pine
       telescope-nvim
       vim-fugitive
+      vimPlugins.nvim-jdtls
     ];
   };
   home.file.".config/nvim" = {

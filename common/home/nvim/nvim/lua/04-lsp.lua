@@ -11,7 +11,6 @@ require("fidget").setup({
 })
 
 lib.setupls("rust_analyzer")
-lib.setupls("java_language_server")
 lib.setupls("lua_ls", {
     Lua = {
         workspace = { checkThirdParty = false },
@@ -19,6 +18,11 @@ lib.setupls("lua_ls", {
     }
 })
 lib.setupls("tsserver")
+
+require("jdtls").start_or_attach({
+    cmd = { "jdtls" },
+    root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1])
+})
 
 local cmp = require("cmp")
 cmp.setup({
