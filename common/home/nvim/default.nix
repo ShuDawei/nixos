@@ -15,6 +15,7 @@
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
+      nvim-jdtls
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim

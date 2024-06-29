@@ -12,6 +12,10 @@ require("fidget").setup({
 
 lib.setupls("rust_analyzer")
 lib.setupls("jdtls")
+require("jdtls").start_or_attach({
+    cmd = { "/etc/profiles/per-user/shudawei/bin/jdtls" }
+})
+
 lib.setupls("lua_ls", {
     Lua = {
         workspace = { checkThirdParty = false },
