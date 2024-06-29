@@ -40,6 +40,7 @@
       cargo-expand
 
       gradle
+      jdk
       jdt-language-server
 
       discord
