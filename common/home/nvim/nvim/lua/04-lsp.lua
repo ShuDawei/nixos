@@ -22,7 +22,7 @@ lib.setupls("tsserver")
 
 require("jdtls").start_or_attach({
     cmd = { "/etc/profiles/per-user/shudawei/bin/jdtls" },
-    root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1])
+    root_dir = vim.fs.dirname(vim.fs.find({ "gradlew" }, { upward = true })[1])
 })
 
 local cmp = require("cmp")
