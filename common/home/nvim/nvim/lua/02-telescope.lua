@@ -2,6 +2,9 @@ require("telescope").setup({
     defaults = {
         border = {},
         borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
+        file_ignore_patterns = {
+            "build"
+        }
     },
 })
 
