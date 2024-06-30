@@ -21,8 +21,6 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-        pkg-config 
-
       nixfmt-rfc-style
       #shudawei.dev
       #shudawei.gpuinf
