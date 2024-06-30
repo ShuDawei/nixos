@@ -31,7 +31,7 @@
       #(import ../shared/scripts/vol.nix pkgs)
       #(callPackage ../shared/drv/xwaylandvideobridge.nix { })
 
-      gcc
+      clang
       rustc
       cargo
       clippy
