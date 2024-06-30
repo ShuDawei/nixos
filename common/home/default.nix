@@ -17,10 +17,21 @@
     #./wireplumber
   ];
 
+        environment.sessionVariables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (with pkgs; [
+          udev
+          alsa-lib
+          vulkan-loader
+          libxkbcommon
+          wayland
+        ];)
+;
+
   home = {
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
+        pkg-config 
+
       nixfmt-rfc-style
       #shudawei.dev
       #shudawei.gpuinf
