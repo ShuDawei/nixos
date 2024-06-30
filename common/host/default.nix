@@ -26,6 +26,15 @@
     };
   };
 
+  environment.variables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (with pkgs; [
+          udev
+          alsa-lib
+          vulkan-loader
+          libxkbcommon
+          wayland
+        ]);
+
+
   networking = {
     hostName = hostname;
     networkmanager.enable = true;
