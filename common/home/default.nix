@@ -23,7 +23,7 @@
           vulkan-loader
           libxkbcommon
           wayland
-        ];)
+        ]);
 ;
 
   home = {
