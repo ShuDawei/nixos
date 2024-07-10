@@ -18,7 +18,7 @@
       nvim-jdtls
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      tree-sitter-grammars.tree-sitter-nu
+      pkgs.tree-sitter-grammars.tree-sitter-nu
       oil-nvim
       rose-pine
       telescope-nvim
