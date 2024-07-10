@@ -17,8 +17,10 @@
       nvim-colorizer-lua
       nvim-jdtls
       nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      pkgs.tree-sitter-grammars.tree-sitter-nu
+      nvim-treesitter.withAllGrammars 
+      ++ [
+        pkgs.tree-sitter.builtGrammars.tree-sitter-nu
+      ]
       oil-nvim
       rose-pine
       telescope-nvim
