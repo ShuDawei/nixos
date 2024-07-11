@@ -39,6 +39,8 @@
       rust-analyzer
       cargo-expand
 
+      nasm
+
       gradle
       jdk
       jdt-language-server
