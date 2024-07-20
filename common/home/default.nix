@@ -14,7 +14,7 @@
     ./nushell
     ./nvim
     #./pipewire
-    #./wireplumber
+    ./wireplumber
   ];
 
   home = {
