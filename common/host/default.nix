@@ -52,8 +52,6 @@
     # package = inputs.hyprland.packages.${system}.default;
   };
 
-  programs.steam.enable = true;
-
   services.xserver = {
     xkb = {
       layout = "de";
