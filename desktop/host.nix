@@ -7,6 +7,7 @@
     powerManagement.enable = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
+    open = true;
   };
   hardware.graphics = {
     enable = true;
