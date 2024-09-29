@@ -23,7 +23,7 @@
     xwayland.enable = true;
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
-      env = [ "EDITOR,nvim" ];
+      env = [ "EDITOR,nvim" "HYPRCURSOR_THEME,rose-pine-hyprcursor" ];
       #cursor = {
       #  no_hardware_cursors = true;
       #};

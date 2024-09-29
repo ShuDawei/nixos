@@ -44,6 +44,7 @@
       font = "JetBrainsMono Nerd Font";
       loginBackground = true;
     })
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   programs.hyprland = {
