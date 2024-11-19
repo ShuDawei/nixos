@@ -18,7 +18,7 @@ lib.setupls("lua_ls", {
         telemetry = { enable = false },
     }
 })
-lib.setupls("tsserver")
+lib.setupls("ts_ls")
 
 local cmp = require("cmp")
 cmp.setup({

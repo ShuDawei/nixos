@@ -43,7 +43,7 @@
       };
       decoration = {
         rounding = 4;
-        drop_shadow = false;
+        #drop_shadow = false;
       };
       animations.enabled = false;
       windowrule = [ "float,title:^(farrealms)(.*)$" ];
