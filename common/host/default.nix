@@ -37,7 +37,7 @@
     keyMap = "de";
   };
 
-  fonts.packages = pkgs.nerd-fonts.jetbrains-mono;
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
   environment.systemPackages = with pkgs; [
     (catppuccin-sddm.override {
       flavor = "mocha";
