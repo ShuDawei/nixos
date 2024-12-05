@@ -50,6 +50,8 @@
       wl-clipboard
       lua-language-server
       socat
+
+      telegram-desktop
     ];
   };
 
