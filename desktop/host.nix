@@ -23,8 +23,4 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     open = true;
   };
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
 }
