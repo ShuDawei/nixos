@@ -19,5 +19,5 @@
     };
   };
 
-  hardware.graphics.extraPackages = [ pkgs.intel-media-driver ];
+  hardware.graphics.extraPackages = [ pkgs.intel-vaapi-driver ];
 }
