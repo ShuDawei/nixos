@@ -10,14 +10,24 @@ require("fidget").setup({
     },
 })
 
+lib.setupls("nixd", {
+    nixd = {
+        nixpkgs = {
+            expr = "import <nixpkgs> { }",
+        },
+        formatting = {
+            command = { "nixfmt" },
+        },
+    },
+})
 lib.setupls("rust_analyzer")
-lib.setupls("jdtls")
 lib.setupls("lua_ls", {
     Lua = {
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
     }
 })
+lib.setupls("jdtls")
 lib.setupls("ts_ls")
 
 local cmp = require("cmp")
