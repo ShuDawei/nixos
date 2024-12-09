@@ -82,8 +82,8 @@
         "SUPER,mouse:273,resizewindow"
       ];
       binde = [
-        ",XF86AudioRaiseVolume,exec,vol inc"
-        ",XF86AudioLowerVolume,exec,vol dec"
+        ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
+        ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"
       ];
       exec-once = [
         "hyprpaper"
