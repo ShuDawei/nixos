@@ -13,19 +13,6 @@
     "flakes"
   ];
 
-  boot = {
-    supportedFilesystems = [ "ntfs" ];
-    loader = {
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-      };
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
   networking = {
     hostName = hostname;
     networkmanager.enable = true;

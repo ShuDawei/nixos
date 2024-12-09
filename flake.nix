@@ -18,6 +18,7 @@
     {
       nixosConfigurations = {
         desktop = util.nixosConfiguration "shudawei" "desktop";
+	laptop = util.nixosConfiguration "shudawei" "laptop";
       };
     };
 }
