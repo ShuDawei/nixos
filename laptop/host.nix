@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -18,4 +18,6 @@
       turbo = "auto";
     };
   };
+
+  hardware.graphics.extraPackages = [ pkgs.intel-vaapi-driver ];
 }
