@@ -19,5 +19,11 @@
     };
   };
 
-  hardware.graphics.extraPackages = [ pkgs.intel-vaapi-driver ];
+  hardware.graphics.extraPackages = [
+    pkgs.intel-vaapi-driver
+    pkgs.libvdpau-va-gl
+  ];
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "i965";
+  };
 }
