@@ -1,7 +1,5 @@
 {
-  inputs,
   pkgs,
-  system,
   ...
 }:
 
@@ -24,7 +22,10 @@
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
       render.explicit_sync = 0;
-      env = [ "EDITOR,nvim" "HYPRCURSOR_THEME,rose-pine-hyprcursor" ];
+      env = [
+        "EDITOR,nvim"
+        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+      ];
       #cursor = {
       #  no_hardware_cursors = true;
       #};

@@ -1,7 +1,5 @@
 {
-  inputs,
   pkgs,
-  system,
   ...
 }:
 
@@ -21,7 +19,7 @@
     username = "shudawei";
     homeDirectory = "/home/shudawei";
     packages = with pkgs; [
-            nixd
+      nixd
       nixfmt-rfc-style
       #shudawei.dev
       #shudawei.gpuinf

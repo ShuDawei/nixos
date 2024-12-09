@@ -10,7 +10,7 @@
   outputs =
     { ... }@inputs:
     let
-      util = import ./util.nix rec {
+      util = import ./util.nix {
         inherit inputs;
         system = "x86_64-linux";
       };
@@ -18,7 +18,7 @@
     {
       nixosConfigurations = {
         desktop = util.nixosConfiguration "shudawei" "desktop";
-	laptop = util.nixosConfiguration "shudawei" "laptop";
+        laptop = util.nixosConfiguration "shudawei" "laptop";
       };
     };
 }

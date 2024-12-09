@@ -8,14 +8,14 @@
       colors = import ./colors.nix;
       keyboard.bindings = [
         {
-            key = "Tab";
-            mods = "Control";
-            chars = "";
+          key = "Tab";
+          mods = "Control";
+          chars = "";
         }
         {
-            key = "Tab";
-            mods = "Control|Shift";
-            chars = "";
+          key = "Tab";
+          mods = "Control|Shift";
+          chars = "";
         }
       ];
     };
