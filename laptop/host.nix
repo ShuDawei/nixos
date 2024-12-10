@@ -1,9 +1,4 @@
-{
-  inputs,
-  system,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -22,11 +17,6 @@
       governor = "performance";
       turbo = "auto";
     };
-  };
-
-  environment.systemPackages = [ inputs.nixpkgs-old.legacyPackages.${system}.libva-utils ];
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
 
   hardware.graphics.extraPackages = [
