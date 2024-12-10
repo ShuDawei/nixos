@@ -56,7 +56,7 @@
 
   services.easyeffects = {
     enable = true;
-    preset = import ./easyeffects.json;
+    preset = builtins.readFile ./easyeffects.json;
   };
 
   programs.home-manager.enable = true;
