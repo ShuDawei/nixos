@@ -21,6 +21,7 @@
     xwayland.enable = true;
     # package = inputs.hyprland.packages.${system}.default;
     settings = {
+      debug.disable_logs = false;
       render.explicit_sync = 0;
       env = [
         "EDITOR,nvim"
