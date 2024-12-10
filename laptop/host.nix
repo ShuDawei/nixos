@@ -21,11 +21,10 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.extraPackages = [
-    pkgs.intel-media-driver
-    pkgs.libva-vdpau-driver
+    pkgs.intel-vaapi-driver
     pkgs.libvdpau-va-gl
   ];
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
+    LIBVA_DRIVER_NAME = "i965";
   };
 }
