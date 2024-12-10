@@ -54,6 +54,11 @@
     ];
   };
 
+  services.easyeffects = {
+    enable = true;
+    preset = import ./easyeffects.json;
+  };
+
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 }
