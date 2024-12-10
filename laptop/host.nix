@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  system,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -26,14 +31,14 @@
   #  powerManagement.enable = true;
   #};
 
-  environment.systemPackages = [ pkgs.libva-utils ];
+  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
   hardware.graphics.extraPackages = [
-    pkgs.intel-vaapi-driver
-    #pkgs.intel-media-driver
+    inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
   ];
-  hardware.graphics.extraPackages32 = [ pkgs.intel-vaapi-driver ];
+  hardware.graphics.extraPackages32 = [
+    inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
+  ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "i965";
-    #LIBVA_DRIVER_NAME = "iHD";
   };
 }
