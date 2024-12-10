@@ -70,6 +70,11 @@
     };
     pulse.enable = true;
     #jack.enable = true;
+    extraConfig.pipewire."quality" = {
+      "stream.properties" = {
+        "resample.quality" = 10;
+      };
+    };
   };
 
   xdg.portal.enable = true;
