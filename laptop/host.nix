@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  inputs,
+  system,
+  pkgs,
+  ...
+}:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -19,7 +24,7 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.libva-utils ];
+  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
