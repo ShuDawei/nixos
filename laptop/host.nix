@@ -24,7 +24,7 @@
     };
   };
 
-  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
+  environment.systemPackages = [ inputs.nixpkgs-old.legacyPackages.${system}.libva-utils ];
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
