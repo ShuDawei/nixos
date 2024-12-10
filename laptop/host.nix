@@ -19,12 +19,13 @@
     };
   };
 
+  hardware.graphics.enable = true;
   hardware.graphics.extraPackages = [
-    pkgs.intel-vaapi-driver
+    pkgs.intel-media-driver
     pkgs.libva-vdpau-driver
+    pkgs.libvdpau-va-gl
   ];
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965";
-    VDPAU_DRIVER = "va_gl";
+    LIBVA_DRIVER_NAME = "iHD";
   };
 }
