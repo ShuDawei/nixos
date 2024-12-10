@@ -20,9 +20,11 @@
   };
 
   hardware.graphics.extraPackages = [
-    pkgs.intel-vaapi-driver
+    #pkgs.intel-vaapi-driver
+    pkgs.intel-media-driver
   ];
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965";
+    #LIBVA_DRIVER_NAME = "i965";
+    LIBVA_DRIVER_NAME = "iHD";
   };
 }
