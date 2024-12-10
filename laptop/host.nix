@@ -26,6 +26,7 @@
   #  powerManagement.enable = true;
   #};
 
+  environment.systemPackages = [ pkgs.libva-utils ];
   hardware.graphics.extraPackages = [
     pkgs.intel-vaapi-driver
     #pkgs.intel-media-driver
