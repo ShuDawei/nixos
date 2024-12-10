@@ -18,7 +18,7 @@
       turbo = "auto";
     };
   };
-
+  services.xserver.videoDrivers = [ "intel" ];
   hardware.graphics.extraPackages = [
     pkgs.intel-vaapi-driver
     #pkgs.intel-media-driver
