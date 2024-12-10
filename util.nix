@@ -15,7 +15,7 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          config.nvidia.acceptLicense = true;
+          #config.nvidia.acceptLicense = true;
           #overlays = [
           #  (final: prev: {
           #    shudawei = {

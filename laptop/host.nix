@@ -19,20 +19,20 @@
     };
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-    modesetting.enable = true;
-    powerManagement.enable = true;
-  };
+  #services.xserver.videoDrivers = [ "nvidia" ];
+  #hardware.nvidia = {
+  #  package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+  #  modesetting.enable = true;
+  #  powerManagement.enable = true;
+  #};
 
-  # hardware.graphics.extraPackages = [
-  #   pkgs.intel-vaapi-driver
-  #   #pkgs.intel-media-driver
-  # ];
-  # hardware.graphics.extraPackages32 = [ pkgs.intel-vaapi-driver ];
-  # environment.sessionVariables = {
-  #   LIBVA_DRIVER_NAME = "i965";
-  #   #LIBVA_DRIVER_NAME = "iHD";
-  # };
+  hardware.graphics.extraPackages = [
+    pkgs.intel-vaapi-driver
+    #pkgs.intel-media-driver
+  ];
+  hardware.graphics.extraPackages32 = [ pkgs.intel-vaapi-driver ];
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "i965";
+    #LIBVA_DRIVER_NAME = "iHD";
+  };
 }
