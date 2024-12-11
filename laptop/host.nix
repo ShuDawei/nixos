@@ -37,9 +37,11 @@
     #};
   };
 
-  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
+  environment.systemPackages = [ pkgs.libva-utils ];
   hardware.graphics.extraPackages = [
-    inputs.nixpkgs-stable.legacyPackages.${system}.nvidia-vaapi-driver
+    pkgs.vaapiVdpau
+    pkgs.libvdpau-va-gl
+    pkgs.nvidia-vaapi-driver
   ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
