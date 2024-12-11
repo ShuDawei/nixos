@@ -41,7 +41,7 @@
   hardware.graphics.extraPackages = [
     #pkgs.intel-vaapi-driver
     inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
-    inputs.nixpkgs-stable.legacyPackages.${system}.ibvdpau-va-gl
+    pkgs.ibvdpau-va-gl
   ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "i965";
