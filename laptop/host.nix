@@ -25,11 +25,11 @@
     };
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-    modesetting.enable = true;
-    powerManagement.enable = true;
+    #services.xserver.videoDrivers = [ "nvidia" ];
+    #hardware.nvidia = {
+    #  package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+    #  modesetting.enable = true;
+    #  powerManagement.enable = true;
     #prime = {
     #  sync.enable = true;
     #  intelBusId = "PCI:0:2:0";
@@ -37,14 +37,14 @@
     #};
   };
 
-  #environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
-  #hardware.graphics.extraPackages = [
-  #  inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
-  #];
-  #hardware.graphics.extraPackages32 = [
-  #  inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
-  #];
-  #environment.sessionVariables = {
-  #  LIBVA_DRIVER_NAME = "i965";
-  #};
+  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
+  hardware.graphics.extraPackages = [
+    inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
+  ];
+  hardware.graphics.extraPackages32 = [
+    inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
+  ];
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "i965";
+  };
 }
