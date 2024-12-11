@@ -67,7 +67,7 @@
         :space-evenly false
         (label :style "color: ${rp-muted}; font-size: 12px;" :text "cpu@")
         (label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EWW_CPU.avg, 0)}%")
-        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${round(EWW_TEMPS.K10TEMP_TCTL, 0)}C)"))
+        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${round(EWW_TEMPS.K10TEMP_TCTL, 0)}C)")
         (label :style "color: ${rp-love}; font-size: 12px;" :text "(${round(EWW_TEMPS.THINKPAD_CPU, 0)}C)"))
     (box
         :space-evenly false
