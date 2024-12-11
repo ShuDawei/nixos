@@ -72,11 +72,11 @@
     #jack.enable = true;
     #extraConfig.pipewire."quality" = {
     #  "context.properties" = {
-    #    "default.clock.rate" = 96000;
-    #    "default.clock.allowed-rates" = [ 96000 ];
+    #    "default.clock.rate" = 48000;
+    #    "default.clock.allowed-rates" = [ 48000 ];
     #  };
     #  "stream.properties" = {
-    #    "resample.quality" = 10;
+    #    "resample.quality" = 4;
     #  };
     #};
   };
