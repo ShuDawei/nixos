@@ -70,15 +70,15 @@
     };
     pulse.enable = true;
     #jack.enable = true;
-    extraConfig.pipewire."quality" = {
-      "context.properties" = {
-        "default.clock.rate" = 96000;
-        "default.clock.allowed-rates" = [ 96000 ];
-      };
-      "stream.properties" = {
-        "resample.quality" = 10;
-      };
-    };
+    #extraConfig.pipewire."quality" = {
+    #  "context.properties" = {
+    #    "default.clock.rate" = 96000;
+    #    "default.clock.allowed-rates" = [ 96000 ];
+    #  };
+    #  "stream.properties" = {
+    #    "resample.quality" = 10;
+    #  };
+    #};
   };
 
   xdg.portal.enable = true;
