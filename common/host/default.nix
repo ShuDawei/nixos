@@ -69,7 +69,7 @@
       support32Bit = true;
     };
     pulse.enable = true;
-    #jack.enable = true;
+    jack.enable = true;
     #extraConfig.pipewire."quality" = {
     #  "context.properties" = {
     #    "default.clock.rate" = 48000;
