@@ -83,4 +83,4 @@
 (deflisten EXT_WS "nu ./nu/ws.nu")
 (defvar EXT_MIC false)
 (defvar EXT_VOL 0.0)
-(defpoll EXT_GPU :interval "2s" "gpuinf -j")
+(defpoll EXT_GPU :interval "2s" "nu ./nu/gpu.nu")
