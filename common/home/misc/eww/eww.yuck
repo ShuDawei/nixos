@@ -73,7 +73,7 @@
         :space-evenly false
         (label :style "color: ${rp-muted}; font-size: 12px;" :text "gpu@")
         (label :style "color: ${rp-rose}; font-size: 12px;" :text "${EXT_GPU.gpu}%")
-        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${EXT_GPU.deg}C)"))
+        (label :style "color: ${rp-love}; font-size: 12px;" :text "(${EXT_GPU.temp}C)"))
         ;(label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EXT_GPU.mem, 2)}G")
     (box
         :space-evenly false
