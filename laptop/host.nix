@@ -48,12 +48,12 @@
   #};
 
   environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
-  hardware.graphics.extraPackages = [
-    #pkgs.intel-vaapi-driver
-    inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
-    #inputs.nixpkgs-stable.legacyPackages.${system}.libvdpau-va-gl
-  ];
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965";
-  };
+  #hardware.graphics.extraPackages = [
+  #  #pkgs.intel-vaapi-driver
+  #  inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
+  #  #inputs.nixpkgs-stable.legacyPackages.${system}.libvdpau-va-gl
+  #];
+  #environment.sessionVariables = {
+  #  LIBVA_DRIVER_NAME = "i965";
+  #};
 }
