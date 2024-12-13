@@ -46,7 +46,7 @@
     };
     enable = true;
     displayManager.lightdm.enable = false;
-    services.displayManager.sddm = {
+    displayManager.sddm = {
       enable = true;
       theme = "catppuccin-mocha";
       package = pkgs.kdePackages.sddm;
