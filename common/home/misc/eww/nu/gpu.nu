@@ -1,3 +1,4 @@
+#!/usr/bin/env nu
 # nvidia-smi --query-gpu utilization.gpu,memory.used,temperature.gpu --format csv | lines | get 1 | str replace -a " " "" | split row "," | to json 
 
 let gpu = nvidia-smi --query-gpu=utilization.gpu --format=csv | lines | get 1 | str replace " %" ""

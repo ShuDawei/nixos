@@ -83,5 +83,5 @@
 
 (deflisten EXT_WS "nu ./nu/ws.nu")
 (defvar EXT_MIC false)
-(defvar EXT_VOL 0.0)
+(defvar EXT_VOL :interval "2s" "wpctl get-volume @DEFAULT_AUDIO_SINK@")
 (defpoll EXT_GPU :interval "2s" "nu ./nu/gpu.nu")

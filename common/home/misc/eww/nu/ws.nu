@@ -1,3 +1,4 @@
+#!/usr/bin/env nu
 def ws [] {
     let active = hyprctl monitors -j
         | from json
