@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   pkgs,
   system,
@@ -46,16 +47,11 @@
     };
     enable = true;
     displayManager.lightdm.enable = false;
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-mocha";
-      package = pkgs.kdePackages.sddm;
-    };
   };
   services.displayManager.sddm = {
     enable = true;
     theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
+    package = lib.mkForce pkgs.kdePackages.sddm;
   };
 
   hardware = {
