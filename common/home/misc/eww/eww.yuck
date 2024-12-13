@@ -33,7 +33,7 @@
     :geometry (geometry :x "0px" :y "-30px" :width "256px" :height "28px" :anchor "top center")
     :monitor 0 :stacking "overlay" :exclusive false
     (box
-        :style "background: rgba(25, 23, 36, 0.5); padding: 0px 8px; border-radius: 8px;"
+        ;:style "background: rgba(25, 23, 36, 0.5); padding: 0px 8px; border-radius: 8px;"
         ;:style "mix-blend-mode: difference;"
         ;:style "text-shadow: rgba(25, 23, 36, 0.25) 1px 1px;"
         :space-evenly false :spacing 8 :halign "center"
