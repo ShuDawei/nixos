@@ -29,7 +29,6 @@
     (catppuccin-sddm.override {
       flavor = "mocha";
       font = "JetBrainsMono Nerd Font";
-      loginBackground = true;
     })
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
@@ -47,6 +46,11 @@
     };
     enable = true;
     displayManager.lightdm.enable = false;
+    services.displayManager.sddm = {
+      enable = true;
+      theme = "catppuccin-mocha";
+      package = pkgs.kdePackages.sddm;
+    };
   };
   services.displayManager.sddm = {
     enable = true;
