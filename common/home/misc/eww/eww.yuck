@@ -81,7 +81,7 @@
         (label :style "color: ${rp-rose}; font-size: 12px;" :text "${round(EWW_RAM.used_mem / 1000000000, 2)}G"))
 ))
 
-(deflisten EXT_WS "nu ./nu/ws.nu")
+(deflisten EXT_WS "./nu/ws.nu")
 (defvar EXT_MIC false)
-(defvar EXT_VOL :interval "2s" "wpctl get-volume @DEFAULT_AUDIO_SINK@")
-(defpoll EXT_GPU :interval "2s" "nu ./nu/gpu.nu")
+(defvar EXT_VOL :interval "2s" "./nu/vol.nu")
+(defpoll EXT_GPU :interval "2s" "./nu/gpu.nu")
