@@ -83,5 +83,5 @@
 
 (deflisten EXT_WS "./nu/ws.nu")
 (defvar EXT_MIC false)
-(defvar EXT_VOL :interval "2s" "./nu/vol.nu")
+(defpoll EXT_VOL :interval "2s" "./nu/vol.nu")
 (defpoll EXT_GPU :interval "2s" "./nu/gpu.nu")
