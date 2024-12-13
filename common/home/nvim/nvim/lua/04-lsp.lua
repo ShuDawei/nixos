@@ -27,6 +27,7 @@ lib.setupls("lua_ls", {
         telemetry = { enable = false },
     }
 })
+lib.setupls("nushell")
 lib.setupls("jdtls")
 lib.setupls("ts_ls")
 
