@@ -11,10 +11,11 @@
   ];
   home.file.".config/hypr/hyprpaper.conf".text = ''
     splash = true;
+    preload = ~/Downloads/wallpaper.png
     preload = ~/Downloads/rose_pine_circle.png
     preload = ~/Downloads/rose_pine_noiseline.png
     preload = ~/Downloads/rose_pine_contourline.png
-    wallpaper = , ~/Downloads/rose_pine_circle.png
+    wallpaper = , ~/Downloads/wallpaper.png
   '';
   wayland.windowManager.hyprland = {
     enable = true;
