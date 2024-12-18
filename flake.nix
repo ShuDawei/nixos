@@ -20,7 +20,7 @@
       nixosConfigurations = {
         desktop = util.nixosConfiguration "shudawei" "desktop";
         laptop = util.nixosConfiguration "shudawei" "laptop";
-	p50 = util.nixosConfiguration "shudawei" "p50";
+        p50 = util.nixosConfiguration "shudawei" "p50";
       };
     };
 }
