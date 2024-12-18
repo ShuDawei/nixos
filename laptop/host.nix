@@ -47,7 +47,7 @@
   #  LIBVA_DRIVER_NAME = "nvidia";
   #};
 
-  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
+  #environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.libva-utils ];
   #hardware.graphics.extraPackages = [
   #  #pkgs.intel-vaapi-driver
   #  inputs.nixpkgs-stable.legacyPackages.${system}.intel-vaapi-driver
