@@ -30,6 +30,6 @@
     inputs.nixpkgs-stable.legacyPackages.${system}.intel-media-driver
   ];
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHd";
+    LIBVA_DRIVER_NAME = "iHD";
   };
 }
