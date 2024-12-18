@@ -25,9 +25,9 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.libva-utils ];
+  environment.systemPackages = [ inputs.nixpkgs-stable.legacyPackages.${system}.pkgs.libva-utils ];
   hardware.graphics.extraPackages = [
-    pkgs.intel-media-driver
+    inputs.nixpkgs-stable.legacyPackages.${system}.intel-media-driver
   ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHd";
