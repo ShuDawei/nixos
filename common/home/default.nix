@@ -54,8 +54,6 @@
     ];
   };
 
-  services.keyd.enable = true;
-
   services.easyeffects = {
     enable = true;
     preset = builtins.readFile ./easyeffects.json;
