@@ -9,10 +9,6 @@
 }:
 
 {
-
-  imports = [ inputs.xremap.nixosModules.default ];
-  services.xremap.enable = true;
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
