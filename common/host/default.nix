@@ -25,7 +25,7 @@
     keyMap = "de";
   };
 
-  services.keyd.enable = true;
+  #services.keyd.enable = true;
 
   fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
   environment.systemPackages = with pkgs; [
