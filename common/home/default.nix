@@ -54,6 +54,8 @@
     ];
   };
 
+  home.file."mute.nu".source = ./mute.nu;
+
   #services.easyeffects = {
   #  enable = true;
   #  preset = builtins.readFile ./easyeffects.json;

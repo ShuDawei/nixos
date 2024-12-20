@@ -73,7 +73,7 @@
         "SUPER SHIFT,9,movetoworkspace,9"
         "SUPER SHIFT,0,movetoworkspace,10"
         ",PRINT,exec,grimblast --freeze copy area"
-        ",KP_ADD,exec,vol mic"
+        ",KP_ADD,exec,/home/shudawei/mute.nu"
         ",KP_SUBTRACT,pass,^(com.obsproject.Studio)$"
       ];
       bindm = [
@@ -88,12 +88,12 @@
         "hyprpaper"
         "eww open-many bar mid"
       ];
-      windowrulev2 = [
-        "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "nofocus,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-      ];
+      #windowrulev2 = [
+      #  "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
+      #  "noanim,class:^(xwaylandvideobridge)$"
+      #  "nofocus,class:^(xwaylandvideobridge)$"
+      #  "noinitialfocus,class:^(xwaylandvideobridge)$"
+      #];
     };
   };
 }
