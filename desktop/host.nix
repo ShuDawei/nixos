@@ -23,4 +23,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     open = true;
   };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+  };
 }
