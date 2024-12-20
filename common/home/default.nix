@@ -54,10 +54,10 @@
     ];
   };
 
-  services.easyeffects = {
-    enable = true;
-    preset = builtins.readFile ./easyeffects.json;
-  };
+  #services.easyeffects = {
+  #  enable = true;
+  #  preset = builtins.readFile ./easyeffects.json;
+  #};
 
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
