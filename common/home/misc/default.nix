@@ -6,6 +6,7 @@
   };
   services.dunst.enable = true;
   programs.firefox.enable = true;
+  programs.firefox.package = pkgs.firefox-bin;
   programs.fzf.enable = true;
   programs.gh.enable = true;
   programs.git = {
