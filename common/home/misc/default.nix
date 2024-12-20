@@ -5,9 +5,6 @@
     enable = true;
   };
   services.dunst.enable = true;
-  programs.firefox.enable = true;
-  programs.firefox.package = pkgs.firefox-bin;
-  programs.firefox.wrapperConfig.pipewireSupport = true;
   programs.fzf.enable = true;
   programs.gh.enable = true;
   programs.git = {

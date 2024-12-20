@@ -14,6 +14,10 @@
     "flakes"
   ];
 
+  programs.firefox.enable = true;
+  programs.firefox.package = pkgs.firefox-bin;
+  programs.firefox.wrapperConfig.pipewireSupport = true;
+
   networking = {
     hostName = hostname;
     networkmanager.enable = true;
