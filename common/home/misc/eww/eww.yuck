@@ -26,7 +26,7 @@
     :geometry (geometry :x "16px" :y "16px" :width "1888px" :height "32px" :anchor "top center")
     :monitor 0 :stacking "fg" :exclusive true
     (box 
-        :style "background: ${rp-base}; border-radius: 8px; padding: 0px 8px;" 
+        :style "background: ${rp-base}; border-radius: 8px;" 
         ;with border:
         ;:style "background: ${rp-base}; border-radius: 8px; border: 2px solid ${rp-overlay}; padding: 0px 8px;" 
         (left) (right)))
